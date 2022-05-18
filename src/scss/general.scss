@@ -25,11 +25,14 @@
 }
 
 .btn {
-  background: linear-gradient(to right, #618967 0%, #72A479 100%);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   border-radius: rem(10);
   font-weight: 600;
   font-size: rem(14);
   line-height: rem(17);
+  background: linear-gradient(to right, #618967 0%, #72A479 100%);
   color: #FFFFFF;
   transition: .3s ease;
   @include pc {&:hover {box-shadow: 0 0 9px rgba(114, 164, 121, .5);}}

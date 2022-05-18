@@ -3,16 +3,20 @@
     <div class="container">
       <div class="header__main">
 
-        <div class="header__burger burger">
-          <span></span><span></span><span></span>
+        <div class="header__burger">
+          <div class="burger">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Меню</p>
+          <span class="close">&#10006;</span>
         </div>
 
-        <div class="header__logo">
+        <div class="header__logo logo">
           <p>LOGOS</p>
         </div>
 
         <div class="header__search search-header">
-          <span class="icon-location"></span>
+          <span class="search-header__icon icon-location"></span>
           <input class="search-header__input" type="text" placeholder="Введите адрес доставки">
           <button class="search-header__button"><span class="icon-search"></span></button>
         </div>
@@ -25,9 +29,10 @@
           </div>
         </div>
 
-        <div class="header__cart cart-header">
-          <p class="cart-header__text"></p>
-          <span class="cart-header__counter"></span>
+        <div class="header__cart cart-header btn">
+          <p class="cart-header__text">Корзина</p>
+          <span class="cart-header__icon icon-buy"></span>
+          <span class="cart-header__counter">0</span>
         </div>
       </div>
     </div>

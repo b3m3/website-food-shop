@@ -74,15 +74,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .burger {
   display: none;
-  width: 1.875rem;
-  height: 1.25rem;
+  width: 1.5625rem;
+  height: 1.125rem;
   position: relative;
 }
 .burger span {
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: #1F1534;
+  background-color: #65906C;
   border-radius: 6px;
   transition: 0.3s ease-in-out;
 }
@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .burger span:nth-child(3) {
   bottom: 0;
-  background-color: #1F1534;
+  background-color: #65906C;
 }
 .burger.active span:nth-child(1) {
   top: 50%;
@@ -164,6 +164,13 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-display: swap;
   src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"), url("../fonts/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy-ExtraBold.ttf") format("ttf");
   font-weight: 800;
   font-style: normal;
@@ -178,13 +185,6 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
   src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
   font-weight: 500;
   font-style: normal;
@@ -192,8 +192,8 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
-  font-weight: 700;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -325,7 +325,7 @@ html {
 body {
   font-family: "Gilroy";
   font-weight: 400;
-  color: #fff;
+  color: #CFCFCF;
   background: linear-gradient(360deg, #211F20 0%, #44403F 100%);
 }
 
@@ -373,11 +373,14 @@ body {
 }
 
 .btn {
-  background: linear-gradient(to right, #618967 0%, #72A479 100%);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   border-radius: 0.625rem;
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.0625rem;
+  background: linear-gradient(to right, #618967 0%, #72A479 100%);
   color: #FFFFFF;
   transition: 0.3s ease;
 }
@@ -413,4 +416,189 @@ body {
 
 /* ======== sections ======== */
 /* header */
+.header__wrapp {
+  background: #403C3B;
+  box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
+}
+.header__main {
+  display: grid;
+  align-items: center;
+  grid-column-gap: 30px;
+  grid-row-gap: 0.5625rem;
+  grid-template: minmax(6.1875rem, auto) auto/minmax(auto, 10.75rem) minmax(auto, 34.6875rem) minmax(auto, 22.875rem) auto;
+}
+@media (max-width: 1320px) {
+  .header__main {
+    grid-column-gap: calc(10px + 20 * ((100vw - 320px) / 1000));
+  }
+}
+@media (max-width: 1024px) {
+  .header__main {
+    padding: 0.8125rem 0;
+    grid-template: auto auto/1fr auto auto;
+  }
+}
+@media (max-width: 767px) {
+  .header__main {
+    grid-template: auto auto/auto 1fr auto;
+  }
+}
+.header__logo {
+  padding: 0 0 0 1.125rem;
+}
+@media (max-width: 767px) {
+  .header__logo {
+    text-align: center;
+  }
+}
+.header__search {
+  background: #504B4A;
+  border-radius: 0.625rem;
+  display: grid;
+  grid-template: minmax(3.25rem, auto)/auto 1fr auto;
+}
+@media (max-width: 1024px) {
+  .header__search {
+    grid-row: 2/3;
+    grid-column: 1/4;
+  }
+}
+.header__contacts {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+@media (max-width: 767px) {
+  .header__contacts {
+    display: none;
+  }
+}
+.header__cart {
+  border-radius: 0.625rem;
+  gap: 2rem;
+  padding: 0.875rem 0.8125rem 0.875rem 1.5rem;
+}
+@media (max-width: 767px) {
+  .header__cart {
+    gap: 0.25rem;
+    padding: 0.3125rem 0.5rem 0.5rem 0.5rem;
+    flex-direction: column-reverse;
+  }
+}
+.header__burger {
+  font-weight: 600;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+.header__burger .close {
+  display: none;
+}
+@media (max-width: 767px) {
+  .header__burger {
+    display: flex;
+  }
+}
+
+.search-header__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0 0.625rem 0 0.875rem;
+}
+.search-header__input {
+  background-color: transparent;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  color: #CFCFCF;
+}
+.search-header__input::placeholder {
+  color: #CFCFCF;
+}
+.search-header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0 0.875rem 0 0.625rem;
+  background-color: transparent;
+}
+
+.contacts-header__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #618967;
+}
+.contacts-header__col {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25rem;
+}
+.contacts-header__text {
+  font-size: 0.75rem;
+  color: #CFCFCF;
+}
+.contacts-header__tel {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.cart-header__text {
+  position: relative;
+  color: #FFFFFF;
+}
+.cart-header__text::before {
+  position: absolute;
+  content: "";
+  top: -0.4375rem;
+  right: -1.125rem;
+  width: 1px;
+  height: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media (max-width: 767px) {
+  .cart-header__text::before {
+    top: -0.125rem;
+    right: 0;
+    width: 100%;
+    height: 1px;
+  }
+}
+@media (max-width: 767px) {
+  .cart-header__text {
+    text-transform: lowercase;
+  }
+}
+.cart-header__icon {
+  font-size: 1.5rem;
+  display: none;
+}
+@media (max-width: 767px) {
+  .cart-header__icon {
+    display: block;
+  }
+}
+.cart-header__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .cart-header__counter {
+    display: none;
+  }
+}
+
 /* footer */
