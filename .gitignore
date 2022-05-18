@@ -1,0 +1,9 @@
+node_modules
+gulp
+gulpfile.js
+package-lock.json
+package.json
+src/js/lib
+src/scss/lib
+src.zip
+.jshintrc

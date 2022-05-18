@@ -1,0 +1,25 @@
+@import 'lib/resetstyle';
+@import 'lib/mixins';
+@import 'lib/burger';
+// @import 'fonts';
+// @import 'icon-fonts';
+// @import 'lib/animationToScroll';
+// @import 'lib/accordion';
+// @import 'lib/scrollbar';
+// @import '../../node_modules/swiper/swiper.scss';
+
+/* settings */
+@import 'settings';
+
+/* general */
+@import 'general';
+
+/* ======== sections ======== */
+
+/* header */
+@import 'sections/header';
+
+
+
+/* footer */
+@import 'sections/footer';

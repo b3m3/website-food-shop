@@ -1,0 +1,11 @@
+$container: rem(1300);
+$ff: '';
+$fw: 400;
+$bg: #fff;
+$mc: #000;
+
+html {scroll-behavior: smooth; font-size: 100%;}
+body {font-family: $ff;font-weight: $fw;color: $mc; background-color: $bg;}
+.app {display: flex;flex-direction: column;height: 100%;}
+.main {flex: 1 1 auto;}
+.container {max-width: $container;margin: 0 auto;padding: 0 rem(15);}
