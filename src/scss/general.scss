@@ -15,3 +15,41 @@
     object-fit: cover;
   }
 }
+
+.logo {
+  font-weight: bold;
+  font-size: rem(25);
+  line-height: rem(25);
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+}
+
+.btn {
+  background: linear-gradient(to right, #618967 0%, #72A479 100%);
+  border-radius: rem(10);
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: rem(17);
+  color: #FFFFFF;
+  transition: .3s ease;
+  @include pc {&:hover {box-shadow: 0 0 9px rgba(114, 164, 121, .5);}}
+}
+
+.title {
+  position: relative;
+  font-weight: bold;
+  @include fit('font-size', 32, 20, 1);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 0 rem(20);
+  &::before {
+    position: absolute;
+    content: '';
+    width: rem(4);
+    height: rem(33);
+    background-color: $green;
+    left: rem(-19);
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

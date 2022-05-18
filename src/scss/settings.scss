@@ -1,11 +1,13 @@
-$container: rem(1300);
-$ff: '';
+$container: rem(1395);
+$ff: 'Gilroy';
 $fw: 400;
-$bg: #fff;
-$mc: #000;
+$bg: linear-gradient(360deg, #211F20 0%, #44403F 100%);
+$mc: #fff;
+$green: #618967;
+$grey: #CFCFCF;
 
 html {scroll-behavior: smooth; font-size: 100%;}
-body {font-family: $ff;font-weight: $fw;color: $mc; background-color: $bg;}
+body {font-family: $ff;font-weight: $fw;color: $mc; background: $bg;}
 .app {display: flex;flex-direction: column;height: 100%;}
 .main {flex: 1 1 auto;}
 .container {max-width: $container;margin: 0 auto;padding: 0 rem(15);}
