@@ -1,20 +1,50 @@
 .footer {
+  position: relative;
   background: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);
   &__main {
     display: grid;
     align-items: center;
-    grid-template: minmax(rem(195), auto) / minmax(auto, rem(294)) 1fr;
+    grid-template: minmax(rem(195), auto) / minmax(auto, rem(373)) 1fr;
+    @include tablet {
+      text-align: center;
+      grid-template: minmax(rem(229), auto) / 1fr;
+    }
   }
-  &__info {}
-  &__menu {
+  &__info {
+    justify-self: center;
   }
   &__up {
-    display: none;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(64);
+    height: rem(64);
+    @include fit('left', 40, 20, 1);
+    @include fit('top', 50, 20, 1);
+    border-radius: 50%;
+    background-color: #fff;
+    transition: .3s;
+
+    & span {
+      @include arrow(up, #000, rem(2), rem(7));
+      transform: rotate(-135deg) translate(-2px, -2px);
+      transition: .3s ease;
+    }
+    &:hover {
+      & span {
+        transform: rotate(-135deg) translate(0);
+      }
+    }
+    @include mq(rem(1440)) {
+      width: rem(50);
+      height: rem(50);
+    };
   }
 }
 
 .info-footer {
-  &__logo {}
   &__copyright {
     font-weight: 500;
     font-size: rem(12);
