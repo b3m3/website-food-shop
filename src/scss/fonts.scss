@@ -1,24 +1,6 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-display: swap;
-	src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
-	 url("../fonts/Gilroy-Bold.woff") format("woff"),
-	 url("../fonts/Gilroy-Bold.ttf") format("ttf"); 
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Gilroy';
-	font-display: swap;
-	src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
-	 url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
-	 url("../fonts/Gilroy-ExtraBold.ttf") format("ttf"); 
-	font-weight: 800;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Gilroy';
-	font-display: swap;
 	src: url("../fonts/Gilroy-Light.woff2") format("woff2"),
 	 url("../fonts/Gilroy-Light.woff") format("woff"),
 	 url("../fonts/Gilroy-Light.ttf") format("ttf"); 
@@ -37,6 +19,15 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-display: swap;
+	src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
+	 url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
+	 url("../fonts/Gilroy-ExtraBold.ttf") format("ttf"); 
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	font-display: swap;
 	src: url("../fonts/Gilroy-Regular.woff2") format("woff2"),
 	 url("../fonts/Gilroy-Regular.woff") format("woff"),
 	 url("../fonts/Gilroy-Regular.ttf") format("ttf"); 
@@ -46,18 +37,9 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-display: swap;
-	src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"),
-	 url("../fonts/Gilroy-SemiBold.woff") format("woff"),
-	 url("../fonts/Gilroy-SemiBold.ttf") format("ttf"); 
-	font-weight: 600;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Greenwich';
-	font-display: swap;
-	src: url("../fonts/Greenwich-Bold.woff2") format("woff2"),
-	 url("../fonts/Greenwich-Bold.woff") format("woff"),
-	 url("../fonts/Greenwich-Bold.ttf") format("ttf"); 
+	src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
+	 url("../fonts/Gilroy-Bold.woff") format("woff"),
+	 url("../fonts/Gilroy-Bold.ttf") format("ttf"); 
 	font-weight: 700;
 	font-style: normal;
 }
@@ -77,6 +59,24 @@
 	 url("../fonts/Proxima-Nova-Bold.woff") format("woff"),
 	 url("../fonts/Proxima-Nova-Bold.ttf") format("ttf"); 
 	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	font-display: swap;
+	src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"),
+	 url("../fonts/Gilroy-SemiBold.woff") format("woff"),
+	 url("../fonts/Gilroy-SemiBold.ttf") format("ttf"); 
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Greenwich';
+	font-display: swap;
+	src: url("../fonts/Greenwich-Bold.woff2") format("woff2"),
+	 url("../fonts/Greenwich-Bold.woff") format("woff"),
+	 url("../fonts/Greenwich-Bold.ttf") format("ttf"); 
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
