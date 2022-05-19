@@ -1,0 +1,23 @@
+.products {
+  overflow: hidden;
+  &__item {
+    position: relative;
+    padding: 0 0 rem(50) 0;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      min-height: 1px;
+      top: 0;
+      left: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+  &__header {
+    padding: rem(50) rem(15);
+  }
+  &__cards {
+    overflow: visible;
+  }
+}

@@ -1,6 +1,24 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-display: swap;
+	src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
+	 url("../fonts/Gilroy-Bold.woff") format("woff"),
+	 url("../fonts/Gilroy-Bold.ttf") format("ttf"); 
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	font-display: swap;
+	src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
+	 url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
+	 url("../fonts/Gilroy-ExtraBold.ttf") format("ttf"); 
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Gilroy';
+	font-display: swap;
 	src: url("../fonts/Gilroy-Light.woff2") format("woff2"),
 	 url("../fonts/Gilroy-Light.woff") format("woff"),
 	 url("../fonts/Gilroy-Light.ttf") format("ttf"); 
@@ -19,45 +37,9 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-display: swap;
-	src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
-	 url("../fonts/Gilroy-ExtraBold.woff") format("woff"),
-	 url("../fonts/Gilroy-ExtraBold.ttf") format("ttf"); 
-	font-weight: 800;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Gilroy';
-	font-display: swap;
 	src: url("../fonts/Gilroy-Regular.woff2") format("woff2"),
 	 url("../fonts/Gilroy-Regular.woff") format("woff"),
 	 url("../fonts/Gilroy-Regular.ttf") format("ttf"); 
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Gilroy';
-	font-display: swap;
-	src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
-	 url("../fonts/Gilroy-Bold.woff") format("woff"),
-	 url("../fonts/Gilroy-Bold.ttf") format("ttf"); 
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'icomoon';
-	font-display: swap;
-	src: url("../fonts/icomoon.woff2") format("woff2"),
-	 url("../fonts/icomoon.woff") format("woff"),
-	 url("../fonts/icomoon.ttf") format("ttf"); 
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Proxima';
-	font-display: swap;
-	src: url("../fonts/Proxima-Nova-Bold.woff2") format("woff2"),
-	 url("../fonts/Proxima-Nova-Bold.woff") format("woff"),
-	 url("../fonts/Proxima-Nova-Bold.ttf") format("ttf"); 
 	font-weight: 400;
 	font-style: normal;
 }
@@ -77,6 +59,24 @@
 	 url("../fonts/Greenwich-Bold.woff") format("woff"),
 	 url("../fonts/Greenwich-Bold.ttf") format("ttf"); 
 	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'icomoon';
+	font-display: swap;
+	src: url("../fonts/icomoon.woff2") format("woff2"),
+	 url("../fonts/icomoon.woff") format("woff"),
+	 url("../fonts/icomoon.ttf") format("ttf"); 
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Proxima';
+	font-display: swap;
+	src: url("../fonts/Proxima-Nova-Bold.woff2") format("woff2"),
+	 url("../fonts/Proxima-Nova-Bold.woff") format("woff"),
+	 url("../fonts/Proxima-Nova-Bold.ttf") format("ttf"); 
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {

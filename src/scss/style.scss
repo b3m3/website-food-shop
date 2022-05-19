@@ -6,7 +6,7 @@
 // @import 'lib/animationToScroll';
 // @import 'lib/accordion';
 // @import 'lib/scrollbar';
-// @import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/swiper.scss';
 
 /* settings */
 @import 'settings';
@@ -24,6 +24,9 @@
 
 /* products-menu */
 @import 'sections/products-menu';
+
+/* products */
+@import 'sections/products';
 
 /* footer */
 @import 'sections/footer';
