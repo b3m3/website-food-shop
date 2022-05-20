@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="b3m3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Корзина</title>
+</head>
+
+<body>
+  <div class="app" id="app">
+    <!-- header -->
+    <header class="header">
+  <div class="header__wrapp">
+    <div class="container">
+      <div class="header__main">
+
+        <div class="header__burger">
+          <div class="burger">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Меню</p>
+          <span class="close">&#10006;</span>
+        </div>
+
+        <div class="header__logo logo">
+          <a href="#">LOGOS</a>
+        </div>
+
+        <div class="header__search search-header">
+          <span class="search-header__icon icon-location"></span>
+          <input class="search-header__input" type="text" placeholder="Введите адрес доставки">
+          <button class="search-header__button"><span class="icon-search"></span></button>
+        </div>
+
+        <div class="header__contacts contacts-header">
+          <span class="contacts-header__icon icon-calling"></span>
+          <div class="contacts-header__col">
+            <p class="contacts-header__text">Контакты:</p>
+            <a class="contacts-header__tel" href="tel:99990001122">+9 (999) 000-11-22</a>
+          </div>
+        </div>
+
+        <div class="header__cart cart-header btn">
+          <p class="cart-header__text">Корзина</p>
+          <span class="cart-header__icon icon-buy"></span>
+          <span class="cart-header__counter">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- main -->
+    <main class="main">
+      <!-- cart -->
+      <section class="cart">
+        <div class="cart__main">
+          <div class="cart__header header-cart">
+            <a href="#index.html" class="header-cart__back">
+              <span>&#5193;</span>
+              к выбору блюда
+            </a>
+            <div class="header-cart__row">
+              <h2 class="header-cart__title title">КОРЗИНА</h2>
+              <span class="header-cart__label">(в корзине 0 товаров)</span>
+            </div>
+          </div>
+
+          <div class="cart__items">
+            <!-- cart items -->
+            <div class="item-cart">
+              <div class="item-cart__img">
+                <img src="" alt="image">
+              </div>
+              <div class="item-cart__info">
+                <h4 class="item-cart__info-title">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</h4>
+                <p class="item-cart__info-text">Кальмары, мидии, креветки, сыр маасдам,
+                  красный лук, микс оливок, базилик, соус песто</p>
+              </div>
+              <div class="item-cart__control">
+                <button class="item-cart__btn minus-btn">-</button>
+                <span class="item-cart__control-counter">1</span>
+                <button class="item-cart__btn plus-btn">+</button>
+              </div>
+              <p class="item-cart__price"><span>5</span> $</p>
+              <button class="item-cart__btn close-btn">
+                &#10006;</button>
+            </div>
+
+            <div class="item-cart">
+              <div class="item-cart__img">
+                <img src="" alt="image">
+              </div>
+              <div class="item-cart__info">
+                <h4 class="item-cart__info-title">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</h4>
+                <p class="item-cart__info-text">Кальмары, мидии, креветки, сыр маасдам,
+                  красный лук, микс оливок, базилик, соус песто</p>
+              </div>
+              <div class="item-cart__control">
+                <button class="item-cart__btn minus-btn">-</button>
+                <span class="item-cart__control-counter">1</span>
+                <button class="item-cart__btn plus-btn">+</button>
+              </div>
+              <p class="item-cart__price"><span>5</span> $</p>
+              <button class="item-cart__btn close-btn">
+                &#10006;</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__info info-footer">
+        <div class="info-footer__logo logo">
+          <a href="#">LOGOS</a>
+        </div>
+        <p class="info-footer__copyright">© ООО СК «АПШЕРОН»<br>
+          Все права защищены. 2010-2020</p>
+        <ul class="info-footer__list">
+          <li><a class="info-footer__link" href="#">Пользовательское соглашение</a></li>
+          <li><a class="info-footer__link" href="#">Карта сайта</a></li>
+          <li><a class="info-footer__link" href="#">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+      <nav class="footer__menu menu">
+        <ul class="menu__list">
+          <li><a class="menu__link" href="#">О ресторане</a></li>
+          <li><a class="menu__link" href="#">Условия доставки</a></li>
+          <li><a class="menu__link" href="#">Возврат товара</a></li>
+          <li><a class="menu__link" href="#">Акции</a></li>
+        </ul>
+      </nav>
+      <a class="footer__up" href="#"><span></span></a>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
