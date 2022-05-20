@@ -45,11 +45,11 @@
           </div>
         </div>
 
-        <div class="header__cart cart-header btn">
-          <p class="cart-header__text">Корзина</p>
+        <a href="cart.html" class="header__cart cart-header btn">
+          <span class="cart-header__text">Корзина</span>
           <span class="cart-header__icon icon-buy"></span>
           <span class="cart-header__counter">0</span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -61,21 +61,22 @@
       <section class="cart">
         <div class="cart__main">
           <div class="cart__header header-cart">
-            <a href="#index.html" class="header-cart__back">
-              <span>&#5193;</span>
-              к выбору блюда
+            <a href="index.html" class="header-cart__back">
+              <span>
+                < </span>
+                  к выбору блюда
             </a>
             <div class="header-cart__row">
               <h2 class="header-cart__title title">КОРЗИНА</h2>
-              <span class="header-cart__label">(в корзине 0 товаров)</span>
+              <p class="header-cart__label">(в корзине <span>0</span> товаров)</p>
             </div>
           </div>
 
           <div class="cart__items">
             <!-- cart items -->
             <div class="item-cart">
-              <div class="item-cart__img">
-                <img src="" alt="image">
+              <div class="item-cart__img ibga">
+                <img src="img/products/01.jpg" alt="image">
               </div>
               <div class="item-cart__info">
                 <h4 class="item-cart__info-title">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</h4>
@@ -88,13 +89,12 @@
                 <button class="item-cart__btn plus-btn">+</button>
               </div>
               <p class="item-cart__price"><span>5</span> $</p>
-              <button class="item-cart__btn close-btn">
-                &#10006;</button>
+              <button class="item-cart__btn close-btn">&#215;</button>
             </div>
 
             <div class="item-cart">
-              <div class="item-cart__img">
-                <img src="" alt="image">
+              <div class="item-cart__img ibga">
+                <img src="img/products/02.jpg" alt="image">
               </div>
               <div class="item-cart__info">
                 <h4 class="item-cart__info-title">ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ</h4>
@@ -107,10 +107,24 @@
                 <button class="item-cart__btn plus-btn">+</button>
               </div>
               <p class="item-cart__price"><span>5</span> $</p>
-              <button class="item-cart__btn close-btn">
-                &#10006;</button>
+              <button class="item-cart__btn close-btn">&#215;</button>
             </div>
 
+          </div>
+
+          <div class="cart__bottom bottom-cart">
+            <div class="bottom-cart__box">
+              <div class="bottom-cart__total">
+                <p class="bottom-cart__total-text">Итог: </p>
+                <p class="bottom-cart__total-prise"><span> 0</span>$</p>
+              </div>
+              <div class="bottom-cart__diff">
+                <p class="bottom-cart__diff-text">До бесплатной доставки не хватет: </p>
+                <p class="bottom-cart__diff-cash"><span> 0</span>$</p>
+              </div>
+              <p class="bottom-cart__label">Минимальная сума заказа 50$</p>
+            </div>
+            <a class="bottom-cart__btn btn" href="#">Оформить заказ</a>
           </div>
         </div>
       </section>

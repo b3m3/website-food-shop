@@ -1,0 +1,202 @@
+.cart {
+  &__main {
+    padding: 0 rem(15);
+  }
+  &__header {
+    max-width: rem(835);
+    padding-top: rem(49);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+  &__items {
+    @include fit('margin-top', 75, 30, 1);
+    overflow: hidden;
+    max-width: rem(1125);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: rem(10);
+  }
+  &__bottom {
+    max-width: rem(795);
+    @include fit('margin-top', 75, 30, 1);
+    @include fit('margin-bottom', 75, 30, 1);
+    padding: rem(20);
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: rem(10);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+}
+
+.header-cart {
+  &__back {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+    color: #FFFFFF;
+
+    & span {
+      font-weight: 400;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    @include fit('gap', 20, 10, 1);
+  }
+  &__label {
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: rem(18);
+    color: $green;
+  }
+}
+
+.item-cart {
+  position: relative;
+  background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+  @include fit('padding', 20, 10, 1);
+  display: grid;
+  align-items: center;
+  gap: rem(10);
+  grid-template: minmax(rem(86), 1fr) / minmax(auto, rem(156)) minmax(auto, rem(475)) minmax(auto, rem(232)) minmax(auto, rem(132)) auto;
+  
+  &:not(:last-child)::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 47.92%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  @include tablet {grid-template: minmax(rem(86), 1fr) auto / repeat(4, 1fr);}
+  &__img {
+    height: 100%;
+    max-width: rem(117);
+    min-width: rem(110);
+
+    @include tablet {grid-row: 1 / 3;}
+  }
+  &__info {
+    align-self: start;
+    max-width: rem(265);
+    min-width: rem(200);
+    display: flex;
+    flex-direction: column;
+    gap: rem(5);
+
+    @include tablet {grid-column: 2 / 5; min-width: unset;}
+  }
+  &__info-title {
+    font-weight: 700;
+    @include fit('font-size', 18, 16, 1);
+    @include fit('line-height', 22, 19, 1);
+    color: #FFFFFF;
+  }
+  &__info-text {
+    font-size: rem(12);
+    line-height: rem(14);
+    color: #A6A7AB;
+
+    @include tablet {display: none;}
+  }
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    @include tablet {gap: rem(9);}
+  }
+  &__btn {
+    width: rem(25);
+    height: rem(25);
+    border-radius: 50%;
+    background-color: $green;
+
+    color: #fff;
+    font-size: rem(20);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__control-counter {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: rem(26);
+    color: #FFFFFF;
+  }
+  &__price {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: rem(26);
+    color: #FFFFFF;
+
+    @include tablet {justify-self: center;}
+  }
+  .close-btn {
+    @include tablet {justify-self: end;}
+  }
+}
+
+.bottom-cart {
+  &__total {
+    display: flex;
+    align-items: center;
+    gap: rem(7);
+
+    @include tablet {justify-content: center;}
+  }
+  &__total-text {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: rem(21);
+  }
+  &__total-prise {
+    font-weight: 700;
+    font-size: rem(25);
+    line-height: rem(30);
+    color: #fff;
+  }
+  &__diff {
+    display: flex;
+    align-items: center;
+    gap: rem(7);
+
+    @include tablet {justify-content: center;}
+  }
+  &__diff-text {
+    font-weight: 500;
+    font-size: rem(12);
+    line-height: rem(14);
+    color: #FFFFFF;
+  }
+  &__diff-cash {
+    color: $green;
+  }
+  &__label {
+    padding: rem(5) 0 0 0;
+    font-size: rem(12);
+    line-height: rem(14);
+    color: #FFFFFF;
+  }
+  &__btn {
+    padding: rem(17) rem(50);
+  }
+}
+
