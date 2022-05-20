@@ -1,0 +1,135 @@
+.about {
+  &__main {
+    position: relative;
+    overflow: hidden;
+    margin-top: rem(43);
+    display: grid;
+    align-items: center;
+    grid-template: minmax(rem(610), auto) / 1fr 1fr;
+
+    &::before {
+      position: absolute;
+      z-index: 2;
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(90deg, #211F20 35%, rgba(68, 64, 63, 0) 100%);
+    }
+    &::after {
+      position: absolute;
+      z-index: 1;
+      content: '';
+      width: 65%;
+      height: 100%;
+      right: -3px;
+      top: 0;
+      background: url('../img/cafe-bg.png') no-repeat right;
+      background-size: cover;
+    }
+
+    @include laptop {
+      margin-left: rem(-15);
+      margin-right: rem(-15);
+      text-align: center;
+      padding: rem(30) rem(15);
+      gap: rem(30);
+      grid-template: auto auto / 1fr;
+    }
+  }
+  &__info {
+    position: relative;
+    @include fit('padding-left', 70, 0, 1);
+    @include fit('padding-right', 47, 0, 1);
+    z-index: 3;
+  }
+  &__icons {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    justify-content: center;
+    gap: rem(15);
+    grid-template: auto auto / auto auto;
+    text-align: center;
+    @include laptop {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.info-about {
+  &__title {
+    font-weight: 700;
+    font-size: rem(32);
+    line-height: rem(39);
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+  &__text {
+    font-size: rem(20);
+    line-height: rem(25);
+    padding-top: rem(25);
+    @include fit('padding-bottom', 60, 25, 1);
+  }
+  &__btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: rem(10);
+
+    font-weight: 700;
+    font-size: rem(13);
+    line-height: rem(16);
+    color: #fff;
+    padding: rem(22) rem(25) rem(22) rem(64);
+    transition: .3s ease;
+
+    @include pc {
+      &:hover {
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.2);
+      }
+    };
+  }
+}
+
+.icons-about {
+  &__item {
+    cursor: pointer;
+    background: rgba(80, 75, 74, 0.9);
+    backdrop-filter: blur(4px);
+    @include fit('width', 228, 135, 1);
+    @include fit('height', 226, 135, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(25);
+    padding: rem(10);
+    transition: .3s ease;
+
+    @include pc {
+      &:hover {
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+
+        .icons-about__icon::before, .icons-about__text {
+          color: $green;
+        }
+      }
+    }
+  }
+  &__icon {
+    @include fit('font-size', 70, 30, 1);
+    &::before {transition: .3s ease;}
+  }
+  &__text {
+    font-size: rem(18);
+    line-height: rem(25);
+    color: #fff;
+    transition: .3s ease;
+  }
+}
+
