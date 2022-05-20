@@ -63,10 +63,12 @@
   cursor: pointer;
   position: relative;
   display: grid;
-  max-width: 325px;
+  max-width: rem(329);
   transition: .3s ease;
 
   @include pc {&:hover {box-shadow: 0px 30px 45px rgba(43, 40, 40, 0.6);}}
+  @include mobile-l {max-width: rem(310);}
+  @include mobile-m {max-width: rem(280);}
   &__counter {
     position: absolute;
     z-index: 2;
