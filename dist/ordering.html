@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="b3m3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Оформление заказа</title>
+</head>
+
+<body>
+  <div class="app" id="app">
+    <!-- header -->
+    <header class="header">
+  <div class="header__wrapp">
+    <div class="container">
+      <div class="header__main">
+
+        <div class="header__burger">
+          <div class="burger">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Меню</p>
+          <span class="close">&#10006;</span>
+        </div>
+
+        <div class="header__logo logo">
+          <a href="#">LOGOS</a>
+        </div>
+
+        <div class="header__search search-header">
+          <span class="search-header__icon icon-location"></span>
+          <input class="search-header__input" type="text" placeholder="Введите адрес доставки">
+          <button class="search-header__button"><span class="icon-search"></span></button>
+        </div>
+
+        <div class="header__contacts contacts-header">
+          <span class="contacts-header__icon icon-calling"></span>
+          <div class="contacts-header__col">
+            <p class="contacts-header__text">Контакты:</p>
+            <a class="contacts-header__tel" href="tel:99990001122">+9 (999) 000-11-22</a>
+          </div>
+        </div>
+
+        <a href="cart.html" class="header__cart cart-header btn">
+          <span class="cart-header__text">Корзина</span>
+          <span class="cart-header__icon icon-buy"></span>
+          <span class="cart-header__counter">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- main -->
+    <main class="main">
+      <!-- ordering -->
+      <section class="ordering">
+        <div class="ordering__container">
+
+          <div class="ordering__header header-ordering ordering__col">
+            <a class="header-ordering__back" href="cart.html">
+              < в корзину</a>
+                <h2 class="header-ordering__title title">Оформление заказа</h2>
+          </div>
+
+          <form action="#" class="ordering__form">
+
+            <div class="ordering__info info-ordering ordering__row">
+              <h4 class="ordering__title">1. Контактная информация</h4>
+              <input class="info-ordering__input ordering__input" type="text" name="user-name" placeholder="Имя"
+                required>
+              <input class="info-ordering__input ordering__input" type="tel" name="user-name" placeholder="Тулефон"
+                required>
+            </div>
+
+            <div class="ordering__delivery delivery-ordering ordering__row">
+              <h4 class="ordering__title">2. Доставка</h4>
+              <div class="ordering__box">
+                <button class="ordering__btn" type="button">Доставка</button>
+                <button class="ordering__btn" type="button">Самовывоз</button>
+                <p class="delivery-ordering__label"><span class="icon-clock"></span>Доставим через 1 час 30 минут</p>
+              </div>
+              <div class="delivery-ordering__hover">
+                <h5 class="ordering__subtitle">Адрес доставки</h5>
+                <div class="delivery-ordering__hover-box">
+                  <input class="ordering__input" type="text" name="street" placeholder="Укажите улицу">
+                  <input class="ordering__input" type="text" name="home" placeholder="Номер дома">
+                  <input class="ordering__input" type="text" name="flat" placeholder="№ квартиры/офиса">
+                  <input class="ordering__input" type="text" name="entrance" placeholder="Подъезд">
+                  <input class="ordering__input" type="text" name="floor" placeholder="Этаж">
+                  <input class="ordering__input" type="text" name="comment" placeholder="Комментарий">
+                </div>
+              </div>
+              <div class="delivery-ordering__hover">
+                <h5 class="ordering__subtitle">Выберите ресторан</h5>
+                <div class="delivery-ordering__hover-select">
+                  <p class="delivery-ordering__hover-btn">Выберите ресторан</p>
+                  <ul class="delivery-ordering__hover-list">
+                    <li class="delivery-ordering__hover-item">Ресторан №1</li>
+                    <li class="delivery-ordering__hover-item">Ресторан №2</li>
+                    <li class="delivery-ordering__hover-item">Ресторан №3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ordering__pay pay-ordering ordering__row">
+              <h4 class="ordering__title">3. Оплатить</h4>
+              <div class="ordering__box">
+                <button class="ordering__btn" type="button">Оплата онлайн</button>
+                <button class="ordering__btn" type="button">Курьеру картой</button>
+                <button class="ordering__btn" type="button">Наличными</button>
+              </div>
+              <div class="pay-ordering__hover">
+                <input class="ordering__input" type="text" name="change" placeholder="Сдача с">
+              </div>
+            </div>
+
+            <div class="ordering__time time-ordering ordering__row">
+              <h4 class="ordering__title">4. Когда доставить</h4>
+              <div class="time-ordering__row">
+                <div class="ordering__box">
+                  <button class="ordering__btn" type="button">В ближайшее время</button>
+                  <button class="ordering__btn" type="button">Ко времени</button>
+                </div>
+                <div class="time-ordering__hover">
+                  <input class="ordering__input" type="text" name="time" placeholder="Укажите время">
+                </div>
+              </div>
+              <div class="time-ordering__quantity">
+                <p class="time-ordering__quantity-text">Кол-во персон</p>
+                <div class="time-ordering__quantity-box">
+                  <button class="time-ordering__quantity-minus">-</button>
+                  <span class="time-ordering__quantity-counter"></span>
+                  <button class="time-ordering__quantity-plus">+</button>
+                </div>
+              </div>
+              <h5 class="ordering__subtitle">Хотите мы позвоним?</h5>
+              <div class="time-ordering__radio">
+                <input class="time-ordering__radio-input" type="checkbox" id="not-call-back" name="not-call-back">
+                <label class="time-ordering__radio-label" for="not-call-back">Не перезванивать</label>
+              </div>
+              <div class="time-ordering__radio">
+                <input class="time-ordering__radio-input" type="checkbox" id="call-back" name="call-back">
+                <label class="time-ordering__radio-label" for="call-back">Потребуется звонок оператора</label>
+              </div>
+            </div>
+
+            <div class="ordering__confirm confirm-ordering ordering__row">
+              <input class="confirm-ordering__checkbox" type="checkbox" id="confirm" name="confirm">
+              <p class="confirm-ordering__text">Я согласен на обработку моих перс. данных
+                в соответствии с <a href="#">Условиями</a></p>
+              <button class="confirm-ordering__btn btn" type="submit">Оформить заказ</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__info info-footer">
+        <div class="info-footer__logo logo">
+          <a href="#">LOGOS</a>
+        </div>
+        <p class="info-footer__copyright">© ООО СК «АПШЕРОН»<br>
+          Все права защищены. 2010-2020</p>
+        <ul class="info-footer__list">
+          <li><a class="info-footer__link" href="#">Пользовательское соглашение</a></li>
+          <li><a class="info-footer__link" href="#">Карта сайта</a></li>
+          <li><a class="info-footer__link" href="#">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+      <nav class="footer__menu menu">
+        <ul class="menu__list">
+          <li><a class="menu__link" href="#">О ресторане</a></li>
+          <li><a class="menu__link" href="#">Условия доставки</a></li>
+          <li><a class="menu__link" href="#">Возврат товара</a></li>
+          <li><a class="menu__link" href="#">Акции</a></li>
+        </ul>
+      </nav>
+      <a class="footer__up" href="#"><span></span></a>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
