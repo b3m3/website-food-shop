@@ -140,6 +140,9 @@
   }
   &__hover {
     padding-top: rem(30);
+    max-width: rem(600);
+
+    @include tablet {max-width: unset;}
   }
   &__hover-box {
     padding-top: rem(20);
