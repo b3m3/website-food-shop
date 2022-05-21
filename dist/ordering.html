@@ -60,103 +60,121 @@
       <!-- ordering -->
       <section class="ordering">
         <div class="ordering__container">
+          <div class="ordering__main">
+            <div class="ordering__header header-ordering">
+              <a class="header-ordering__back" href="cart.html">
+                < в корзину</a>
+                  <h2 class="header-ordering__title title">Оформление заказа</h2>
+            </div>
 
-          <div class="ordering__header header-ordering ordering__col">
-            <a class="header-ordering__back" href="cart.html">
-              < в корзину</a>
-                <h2 class="header-ordering__title title">Оформление заказа</h2>
+            <form action="#" class="ordering__form">
+              <div class="ordering__info info-ordering ordering__block">
+                <h4 class="ordering__title">1. Контактная информация</h4>
+                <div class="info-ordering__row">
+                  <input class="info-ordering__input ordering__input" type="text" name="user-name" placeholder="Имя"
+                    required>
+                  <input class="info-ordering__input ordering__input" type="tel" name="user-name" placeholder="Телефон"
+                    required>
+                </div>
+              </div>
+
+              <div class="ordering__delivery delivery-ordering ordering__block">
+                <h4 class="ordering__title">2. Доставка</h4>
+                <div class="delivery-ordering__row">
+                  <div class="ordering__box ordering__box_small">
+                    <button class="ordering__btn active" type="button">Доставка</button>
+                    <button class="ordering__btn" type="button">Самовывоз</button>
+                  </div>
+                  <p class="delivery-ordering__label"><span class="icon-clock"></span>Доставим через 1 час 30 минут</p>
+                </div>
+
+                <div class="delivery-ordering__hover">
+                  <h5 class="ordering__subtitle">Адрес доставки</h5>
+                  <div class="delivery-ordering__hover-box">
+                    <input class="ordering__input" type="text" name="street" placeholder="Укажите улицу">
+                    <input class="ordering__input" type="text" name="home" placeholder="Номер дома">
+                    <input class="ordering__input" type="text" name="flat" placeholder="№ квартиры/офиса">
+                    <input class="ordering__input" type="text" name="entrance" placeholder="Подъезд">
+                    <input class="ordering__input" type="text" name="floor" placeholder="Этаж">
+                    <input class="ordering__input" type="text" name="comment" placeholder="Комментарий">
+                  </div>
+                </div>
+
+                <div class="delivery-ordering__hover">
+                  <h5 class="ordering__subtitle">Выберите ресторан</h5>
+                  <div class="delivery-ordering__hover-select">
+                    <p class="delivery-ordering__hover-btn">Выберите ресторан</p>
+                    <ul class="delivery-ordering__hover-list">
+                      <li class="delivery-ordering__hover-item">Ресторан №1</li>
+                      <li class="delivery-ordering__hover-item">Ресторан №2</li>
+                      <li class="delivery-ordering__hover-item">Ресторан №3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ordering__pay pay-ordering ordering__block">
+                <h4 class="ordering__title">3. Оплатить</h4>
+                <div class="pay-ordering__row">
+                  <div class="ordering__box ordering__box_big">
+                    <button class="ordering__btn pay-ordering__btn-act active" type="button">
+                      <span>Оплата</span> онлайн
+                    </button>
+                    <button class="ordering__btn pay-ordering__btn-act" type="button">
+                      <span>Курьеру</span> картой
+                    </button>
+                    <button class="ordering__btn" type="button">Наличными</button>
+                  </div>
+                  <div class="pay-ordering__hover">
+                    <input class="ordering__input" type="text" name="change" placeholder="Сдача с">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ordering__time time-ordering ordering__block">
+                <h4 class="ordering__title">4. Когда доставить</h4>
+                <div class="time-ordering__row">
+                  <div class="ordering__box ordering__box_small">
+                    <button class="ordering__btn active" type="button">В ближайшее время</button>
+                    <button class="ordering__btn" type="button">Ко времени</button>
+                  </div>
+                  <div class="time-ordering__hover">
+                    <input class="ordering__input" type="text" name="time" placeholder="Укажите время">
+                  </div>
+                </div>
+                <div class="time-ordering__quantity">
+                  <p class="time-ordering__quantity-text">Кол-во персон</p>
+                  <div class="time-ordering__quantity-box">
+                    <button class="time-ordering__quantity-btn ordering-minus" type="button">-</button>
+                    <span class="time-ordering__quantity-counter ordering-counter">1</span>
+                    <button class="time-ordering__quantity-btn ordering-plus" type="button">+</button>
+                  </div>
+                </div>
+                <h5 class="ordering__subtitle">Хотите мы позвоним?</h5>
+                <div class="time-ordering__radio">
+                  <input class="time-ordering__radio-input" type="radio" id="not-call-back" name="radio" checked>
+                  <label class="time-ordering__radio-label" for="not-call-back">Не перезванивать</label>
+                  <span class="time-ordering__radio-custom"></span>
+                </div>
+                <div class="time-ordering__radio">
+                  <input class="time-ordering__radio-input" type="radio" id="call-back" name="radio">
+                  <label class="time-ordering__radio-label" for="call-back">Потребуется звонок оператора</label>
+                  <div class="time-ordering__radio-custom"></div>
+                </div>
+              </div>
+
+              <div class="ordering__confirm confirm-ordering ordering__block">
+                <div class="confirm-ordering__checkbox">
+                  <input class="confirm-ordering__checkbox-input" type="checkbox" id="confirm" name="confirm" checked>
+                  <label class="confirm-ordering__checkbox-label" for="confirm">Я согласен на обработку моих перс.
+                    данных
+                    в соответствии с <a href="#">Условиями</a></label>
+                  <span class="confirm-ordering__checkbox-custom"></span>
+                </div>
+                <button class="confirm-ordering__btn btn" type="submit">Оформить заказ</button>
+              </div>
+            </form>
           </div>
-
-          <form action="#" class="ordering__form">
-
-            <div class="ordering__info info-ordering ordering__row">
-              <h4 class="ordering__title">1. Контактная информация</h4>
-              <input class="info-ordering__input ordering__input" type="text" name="user-name" placeholder="Имя"
-                required>
-              <input class="info-ordering__input ordering__input" type="tel" name="user-name" placeholder="Тулефон"
-                required>
-            </div>
-
-            <div class="ordering__delivery delivery-ordering ordering__row">
-              <h4 class="ordering__title">2. Доставка</h4>
-              <div class="ordering__box">
-                <button class="ordering__btn" type="button">Доставка</button>
-                <button class="ordering__btn" type="button">Самовывоз</button>
-                <p class="delivery-ordering__label"><span class="icon-clock"></span>Доставим через 1 час 30 минут</p>
-              </div>
-              <div class="delivery-ordering__hover">
-                <h5 class="ordering__subtitle">Адрес доставки</h5>
-                <div class="delivery-ordering__hover-box">
-                  <input class="ordering__input" type="text" name="street" placeholder="Укажите улицу">
-                  <input class="ordering__input" type="text" name="home" placeholder="Номер дома">
-                  <input class="ordering__input" type="text" name="flat" placeholder="№ квартиры/офиса">
-                  <input class="ordering__input" type="text" name="entrance" placeholder="Подъезд">
-                  <input class="ordering__input" type="text" name="floor" placeholder="Этаж">
-                  <input class="ordering__input" type="text" name="comment" placeholder="Комментарий">
-                </div>
-              </div>
-              <div class="delivery-ordering__hover">
-                <h5 class="ordering__subtitle">Выберите ресторан</h5>
-                <div class="delivery-ordering__hover-select">
-                  <p class="delivery-ordering__hover-btn">Выберите ресторан</p>
-                  <ul class="delivery-ordering__hover-list">
-                    <li class="delivery-ordering__hover-item">Ресторан №1</li>
-                    <li class="delivery-ordering__hover-item">Ресторан №2</li>
-                    <li class="delivery-ordering__hover-item">Ресторан №3</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="ordering__pay pay-ordering ordering__row">
-              <h4 class="ordering__title">3. Оплатить</h4>
-              <div class="ordering__box">
-                <button class="ordering__btn" type="button">Оплата онлайн</button>
-                <button class="ordering__btn" type="button">Курьеру картой</button>
-                <button class="ordering__btn" type="button">Наличными</button>
-              </div>
-              <div class="pay-ordering__hover">
-                <input class="ordering__input" type="text" name="change" placeholder="Сдача с">
-              </div>
-            </div>
-
-            <div class="ordering__time time-ordering ordering__row">
-              <h4 class="ordering__title">4. Когда доставить</h4>
-              <div class="time-ordering__row">
-                <div class="ordering__box">
-                  <button class="ordering__btn" type="button">В ближайшее время</button>
-                  <button class="ordering__btn" type="button">Ко времени</button>
-                </div>
-                <div class="time-ordering__hover">
-                  <input class="ordering__input" type="text" name="time" placeholder="Укажите время">
-                </div>
-              </div>
-              <div class="time-ordering__quantity">
-                <p class="time-ordering__quantity-text">Кол-во персон</p>
-                <div class="time-ordering__quantity-box">
-                  <button class="time-ordering__quantity-minus">-</button>
-                  <span class="time-ordering__quantity-counter"></span>
-                  <button class="time-ordering__quantity-plus">+</button>
-                </div>
-              </div>
-              <h5 class="ordering__subtitle">Хотите мы позвоним?</h5>
-              <div class="time-ordering__radio">
-                <input class="time-ordering__radio-input" type="checkbox" id="not-call-back" name="not-call-back">
-                <label class="time-ordering__radio-label" for="not-call-back">Не перезванивать</label>
-              </div>
-              <div class="time-ordering__radio">
-                <input class="time-ordering__radio-input" type="checkbox" id="call-back" name="call-back">
-                <label class="time-ordering__radio-label" for="call-back">Потребуется звонок оператора</label>
-              </div>
-            </div>
-
-            <div class="ordering__confirm confirm-ordering ordering__row">
-              <input class="confirm-ordering__checkbox" type="checkbox" id="confirm" name="confirm">
-              <p class="confirm-ordering__text">Я согласен на обработку моих перс. данных
-                в соответствии с <a href="#">Условиями</a></p>
-              <button class="confirm-ordering__btn btn" type="submit">Оформить заказ</button>
-            </div>
-          </form>
         </div>
       </section>
     </main>
