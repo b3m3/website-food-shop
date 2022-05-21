@@ -101,10 +101,13 @@
 
 .header-ordering {
   &__back {
+    align-self: start;
     font-weight: 700;
     font-size: rem(16);
     line-height: rem(19);
     color: #FFFFFF;
+
+    &:hover{text-decoration: underline;}
   }
 }
 
