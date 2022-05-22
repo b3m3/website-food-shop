@@ -1,3 +1,19 @@
+@keyframes tab-hover {
+  from {
+    transform: translate(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tab-btn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .ibg {
   width: 100%;
   height: 100%;

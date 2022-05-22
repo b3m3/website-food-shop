@@ -513,6 +513,24 @@ body {
 }
 
 /* general */
+@keyframes tab-hover {
+  from {
+    transform: translate(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes tab-btn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .ibg {
   width: 100%;
   height: 100%;
@@ -1679,6 +1697,13 @@ body {
   flex-direction: column;
   gap: 1.25rem;
 }
+.ordering__hover {
+  display: none;
+}
+.ordering__hover.active {
+  display: block;
+  animation: tab-hover 1s ease;
+}
 .ordering__input {
   display: flex;
   align-items: center;
@@ -1748,6 +1773,7 @@ body {
 }
 .ordering__btn.active {
   background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+  animation: tab-btn 1s ease;
 }
 .ordering__title {
   font-weight: 700;
@@ -1802,6 +1828,7 @@ body {
   align-items: center;
   gap: 0.625rem;
   color: #fff;
+  transition: 0.4s ease;
 }
 .delivery-ordering__hover {
   padding-top: 1.875rem;
@@ -1844,7 +1871,7 @@ body {
   position: relative;
 }
 .delivery-ordering__hover-select.selected .delivery-ordering__hover-list {
-  height: 6.8125rem;
+  height: 7.8125rem;
   padding: 1.25rem;
   opacity: 1;
   pointer-events: all;
@@ -1862,20 +1889,15 @@ body {
   position: relative;
   margin-top: 1.25rem;
   border-radius: 0.625rem;
-  padding-right: 181px;
   padding-left: 1.875rem;
+  width: 19.625rem;
+  height: 3.75rem;
   display: flex;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 1rem;
   line-height: 1.1875rem;
-  height: 3.75rem;
   color: #FFFFFF;
-}
-@media (max-width: 1320px) {
-  .delivery-ordering__hover-btn {
-    padding-right: calc(50px + 131 * ((100vw - 320px) / 1000));
-  }
 }
 .delivery-ordering__hover-btn::before {
   position: absolute;
@@ -1887,6 +1909,12 @@ body {
   border-left: 0.4375rem solid transparent;
   border-right: 0.4375rem solid transparent;
   border-top: 0.4375rem solid #618967;
+  transition: 0.4s ease;
+}
+@media (max-width: 767px) {
+  .delivery-ordering__hover-btn {
+    width: 100%;
+  }
 }
 .delivery-ordering__hover-list {
   position: absolute;
@@ -1896,13 +1924,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.625rem;
   background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
-  top: 103%;
+  top: 104%;
   left: 0;
   width: 100%;
   height: 0;
   padding: 1.25rem;
   opacity: 0;
   pointer-events: none;
+  transition: 0.4s ease;
 }
 .delivery-ordering__hover-item {
   cursor: pointer;
