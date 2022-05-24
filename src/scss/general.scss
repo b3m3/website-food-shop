@@ -92,7 +92,6 @@
   &__counter {
     position: absolute;
     z-index: 2;
-    // display: flex;
     display: none;
     justify-content: center;
     align-items: center;
@@ -108,6 +107,10 @@
     font-size: rem(20);
     line-height: rem(24);
     color: #FFFFFF;
+
+    &.added {
+      display: flex;
+    }
   }
   &__image {
     border-radius: rem(10) rem(10) 0 0;
@@ -149,6 +152,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &.added {
+      display: none;
+    }
   }
   &__body-price {
     font-weight: 600;
@@ -167,12 +174,13 @@
     color: #FFFFFF;
 
     & span {
+      pointer-events: none;
       font-size: rem(20);
     }
   }
   &__body-hover {
-    // display: flex;
     display: none;
+    align-items: center;
     justify-content: space-between;
     & button {
       font-weight: 700;
@@ -182,6 +190,10 @@
       align-items: center;
       width: rem(62);
       height: rem(44);
+    }
+
+    &.added {
+      display: flex;
     }
   }
 }

@@ -167,8 +167,8 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
-  font-weight: 500;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -176,6 +176,13 @@ h1, h2, h3, h4, h5, h6 {
   font-display: swap;
   src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"), url("../fonts/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy-ExtraBold.ttf") format("ttf");
   font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-display: swap;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -211,13 +218,6 @@ h1, h2, h3, h4, h5, h6 {
   font-display: swap;
   src: url("../fonts/icomoon.woff2") format("woff2"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("ttf");
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"), url("../fonts/Gilroy-Bold.ttf") format("ttf");
-  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -650,6 +650,9 @@ body {
   line-height: 1.5rem;
   color: #FFFFFF;
 }
+.card__counter.added {
+  display: flex;
+}
 .card__image {
   border-radius: 0.625rem 0.625rem 0 0;
   overflow: hidden;
@@ -689,6 +692,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.card__body-bottom.added {
+  display: none;
+}
 .card__body-price {
   font-weight: 600;
   font-size: 1.25rem;
@@ -706,10 +712,12 @@ body {
   color: #FFFFFF;
 }
 .card__body-btn span {
+  pointer-events: none;
   font-size: 1.25rem;
 }
 .card__body-hover {
   display: none;
+  align-items: center;
   justify-content: space-between;
 }
 .card__body-hover button {
@@ -720,6 +728,9 @@ body {
   align-items: center;
   width: 3.875rem;
   height: 2.75rem;
+}
+.card__body-hover.added {
+  display: flex;
 }
 
 /* ======== sections ======== */
