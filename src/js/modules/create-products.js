@@ -71,14 +71,11 @@ const createPoducts = () => {
             productCard(wrapp, {...item});
           });
         });
-  
         
         productEvents();
       })
       .catch((err) => console.log(err))
-      .finally(() => {
-        setTimeout(slider, 300);
-      });
+      .finally(() => setTimeout(slider, 300));
   }
 };
 

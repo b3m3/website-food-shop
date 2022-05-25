@@ -1,9 +1,31 @@
 const productEvents = () => {
   const productsSection = document.querySelector('.products');
-
+  const cards = document.querySelectorAll('.card');
+  const cartCounter = document.querySelector('.cart-header__counter');
+  
   if (productsSection) {
+    
+    // local storage get data
+    cards.forEach(card => {
+      for (const key in localStorage) {
+
+        if (card.id == key.split(' ').pop()) {
+          const data = JSON.parse(localStorage[key]);
+
+          cartCounter.textContent = (+cartCounter.textContent) + (+data.counter);
+
+          card.querySelector('.card__body-hover-price span').textContent = data.showPrice;
+          card.querySelector('.card__counter').textContent = data.counter;
+
+          card.querySelector('.card__body-hover').classList.add('added');
+          card.querySelector('.card__body-bottom').classList.add('added');
+          card.querySelector('.card__counter').classList.add('added');
+        }
+      }
+    });
 
     productsSection.addEventListener('click', (e) => {
+
 
       const getElements = () => {
 
@@ -47,6 +69,7 @@ const productEvents = () => {
         wClasses('add');
 
         localStorage.setItem('id ' + getElements().parent.id, JSON.stringify(cardData()));
+        cartCounter.textContent++;
       }
 
       if (e.target.classList.contains('card__body-plus')) {
@@ -56,6 +79,7 @@ const productEvents = () => {
           (+getElements().staticPrice.textContent) + (+getElements().showPrice.textContent);
 
         localStorage.setItem('id ' + getElements().parent.id, JSON.stringify(cardData()));
+        cartCounter.textContent++;
       }
 
       if (e.target.classList.contains('card__body-minus')) {
@@ -65,6 +89,7 @@ const productEvents = () => {
           (+getElements().showPrice.textContent) - (+getElements().staticPrice.textContent);
 
         localStorage.setItem('id ' + getElements().parent.id, JSON.stringify(cardData()));
+        cartCounter.textContent--;
 
         if (getElements().counter.textContent < 1) {
           wClasses('remove');
@@ -76,8 +101,6 @@ const productEvents = () => {
         }
       }
     });
-
-    
   }
 };
 
