@@ -96,6 +96,7 @@
     min-width: rem(110);
 
     @include tablet {grid-row: 1 / 3;}
+    @include mobile-m {min-width: rem(90);}
   }
   &__info {
     align-self: start;
@@ -121,11 +122,10 @@
     @include tablet {display: none;}
   }
   &__control {
-    display: flex;
-    align-items: center;
-    gap: rem(20);
+    display: inline-grid;
+    grid-template: rem(25) / rem(25) rem(40) rem(25);
 
-    @include tablet {gap: rem(9);}
+    @include tablet {grid-template: rem(25) / rem(25) rem(25) rem(25);}
   }
   &__btn {
     width: rem(25);
@@ -144,18 +144,23 @@
     &:hover {box-shadow: 0 0 5px 1px rgba(102, 204, 102, 0.295);}
   }
   &__control-counter {
+    @include fit('font-size', 20, 14, 1);
     font-weight: 700;
-    font-size: rem(20);
     line-height: rem(26);
     color: #FFFFFF;
+    text-align: center;
   }
   &__price {
+    @include fit('font-size', 20, 14, 1);
     font-weight: 700;
-    font-size: rem(20);
     line-height: rem(26);
     color: #FFFFFF;
 
     @include tablet {justify-self: center;}
+  }
+  .minus-btn.ban {
+    opacity: .3;
+    pointer-events: none;
   }
   .close-btn {
     @include tablet {justify-self: end;}
