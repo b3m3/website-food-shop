@@ -201,6 +201,15 @@
   }
   &__diff-cash {
     color: $green;
+
+    &.free {
+      & span:first-child::before {
+        content: attr(data-free);
+      }
+      & span:last-child {
+        display: none;
+      }
+    }
   }
   &__label {
     padding: rem(5) 0 0 0;
