@@ -29,7 +29,7 @@
             </a>
             <div class="header-cart__row">
               <h2 class="header-cart__title title">КОРЗИНА</h2>
-              <p class="header-cart__label">(в корзине <span>0</span> товаров)</p>
+              <p class="header-cart__label">(в корзине <span>0</span> <span class="ending">товаров</span>)</p>
             </div>
           </div>
 
@@ -41,18 +41,21 @@
             <div class="bottom-cart__box">
               <div class="bottom-cart__total">
                 <p class="bottom-cart__total-text">Итог: </p>
-                <p class="bottom-cart__total-prise"><span> 0</span>$</p>
+                <p class="bottom-cart__total-prise"><span> 0</span> $</p>
               </div>
               <div class="bottom-cart__diff">
                 <p class="bottom-cart__diff-text">До бесплатной доставки не хватет: </p>
-                <p class="bottom-cart__diff-cash"><span> 0</span>$</p>
+                <p class="bottom-cart__diff-cash"><span data-free="FREE"> 50</span> <span>$</span></p>
               </div>
-              <p class="bottom-cart__label">Минимальная сума заказа 50$</p>
+              <p class="bottom-cart__label">Минимальная сума заказа: 50 $</p>
             </div>
             <a class="bottom-cart__btn btn" href="ordering.html">Оформить заказ</a>
           </div>
         </div>
       </section>
+
+      <!-- modal -->
+      @@include('html/blocks/modal.html', {"link": "index.html", "close": "index.html"})
     </main>
 
     <!-- footer -->

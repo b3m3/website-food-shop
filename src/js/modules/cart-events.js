@@ -1,10 +1,13 @@
 const cartEvents = () => {
   const cartCounter = document.querySelector('.cart-header__counter');
+  const quantityLabel = document.querySelector('.header-cart__label span');
+  const total = document.querySelector('.bottom-cart__total-prise span');
+  const difference = document.querySelector('.bottom-cart__diff-cash span');
+  const sumToFreeShipping = 50;
 
   if (document.querySelector('.cart')) {
     
     for (const key in localStorage) {
-
       if (typeof(localStorage[key]) === 'string') {
         const data = JSON.parse(localStorage[key]);
   
@@ -50,9 +53,18 @@ const cartEvents = () => {
       const counter = card.querySelector('.item-cart__control-counter');
       const price = card.querySelector('.item-cart__price span');
 
-      const banClick = () => counter.textContent <= 1 ? 
-        minusBtn.classList.add('ban') :
-        minusBtn.classList.remove('ban');
+      cartCounter.textContent = +cartCounter.textContent + (+counter.textContent);
+      quantityLabel.textContent = cartCounter.textContent;
+      total.textContent = +total.textContent + (+price.textContent);
+      difference.textContent = sumToFreeShipping - total.textContent;
+
+      const banClick = () => {
+        if (counter.textContent <= 1) {
+          minusBtn.classList.add('ban');
+        } else {
+          minusBtn.classList.remove('ban');
+        }
+      };
 
       const infoCard = () => {
         return {
@@ -66,9 +78,35 @@ const cartEvents = () => {
         };
       };
 
-      banClick();
+      const freeStatus = () => {
+        if (difference.textContent <= 0) {
+          difference.parentNode.classList.add('free');
+          difference.textContent = '';
+        } else {
+          difference.parentNode.classList.remove('free');
+        }
+      };
 
-      cartCounter.textContent = +cartCounter.textContent + (+counter.textContent);
+      const correctEnding = () => {
+        const ending = document.querySelector('.ending');
+        quantityLabel.textContent = cartCounter.textContent;
+
+        if (+quantityLabel.textContent % 10 === 1) {
+          ending.textContent = 'товар';
+        } else if (+quantityLabel.textContent % 10 >= 2 && +quantityLabel.textContent % 10 <= 4) {
+          ending.textContent = 'товара';
+        } else if (+quantityLabel.textContent % 10 >= 5 && +quantityLabel.textContent % 10 <= 9) {
+          ending.textContent = 'товаров';
+        } 
+
+        if (+quantityLabel.textContent >= 5 && +quantityLabel.textContent <= 20) {
+          ending.textContent = 'товаров';
+        }
+      };
+
+      banClick();
+      freeStatus();
+      correctEnding();
 
       card.addEventListener('click', (e) => {
 
@@ -76,23 +114,40 @@ const cartEvents = () => {
           case plusBtn:
             counter.textContent++;
             cartCounter.textContent++;
+            total.textContent = +total.textContent + (+price.parentNode.dataset.price);
             price.textContent = (+price.textContent) + (+price.parentNode.dataset.price);
+            difference.textContent = sumToFreeShipping - total.textContent;
             localStorage.setItem(`id ${card.id}`, JSON.stringify(infoCard()));
             banClick();
+            freeStatus();
+            correctEnding();
               break;
 
           case minusBtn:
             counter.textContent--;
             cartCounter.textContent--;
+            total.textContent = +total.textContent - (+price.parentNode.dataset.price);
             price.textContent = price.textContent - price.parentNode.dataset.price;
+            difference.textContent = sumToFreeShipping - total.textContent;
             localStorage.setItem(`id ${card.id}`, JSON.stringify(infoCard()));
             banClick();
+            freeStatus();
+            correctEnding();
               break;
 
           case closeBtn:
-            card.remove();
-            localStorage.removeItem(`id ${card.id}`);
             cartCounter.textContent = cartCounter.textContent - counter.textContent;
+            total.textContent = total.textContent - price.textContent;
+            difference.textContent = sumToFreeShipping - total.textContent;
+            localStorage.removeItem(`id ${card.id}`);
+            card.remove();
+            freeStatus();
+            correctEnding();
+
+            if (+cartCounter.textContent < 1) {
+              const modal = document.querySelector('.modal');
+              modal.classList.add('show-modal');
+            }
               break;
         }
       });

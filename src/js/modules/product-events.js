@@ -1,7 +1,9 @@
 const productEvents = () => {
   const cards = document.querySelectorAll('.card');
   const cartCounter = document.querySelector('.cart-header__counter');
-  
+  const cartBtn = document.querySelector('.cart-header');
+  const modal = document.querySelector('.modal');
+
   if (document.querySelector('.products')) {
 
     const addInfoFromLStorage = (item, counter, price, showHoverElems) => {
@@ -10,7 +12,6 @@ const productEvents = () => {
           const data = JSON.parse(localStorage[key]);
           
           if (key.split(' ').pop() == item.id) {
-            console.log(data.counter);
             counter.textContent = data.counter;
             price.textContent = data.showPrice;
             showHoverElems('add');
@@ -18,7 +19,7 @@ const productEvents = () => {
         }
       }
     };
-
+    
     cards.forEach(card => {
       const img = card.querySelector('.card__image img');
       const counter = card.querySelector('.card__counter');
@@ -52,19 +53,29 @@ const productEvents = () => {
         };
       };
 
+      const cartPreventDefault = () => {
+        if (+cartCounter.textContent < 1) {
+          cartCounter.parentNode.setAttribute('href', '#');
+        } else {
+          cartCounter.parentNode.setAttribute('href', 'cart.html');
+        }
+      };
+
       addInfoFromLStorage(card, counter, showPrice, wClasses);
-
+      
       cartCounter.textContent = hoverElem.classList.contains('added') ? 
-        +cartCounter.textContent + (+counter.textContent) :
-        cartCounter.textContent;
-
+      +cartCounter.textContent + (+counter.textContent) :
+      cartCounter.textContent;
+      
+      cartPreventDefault();
+      
       card.addEventListener('click', (e) => {
-  
         switch (e.target) {
           case addBtn:
             wClasses('add');
             localStorage.setItem('id ' + card.id, JSON.stringify(infoCard()));
             cartCounter.textContent++;
+            cartPreventDefault();
               break;
   
           case plusBtn:
@@ -72,6 +83,7 @@ const productEvents = () => {
             cartCounter.textContent++;
             showPrice.textContent = +staticPrice.textContent + (+showPrice.textContent);
             localStorage.setItem('id ' + card.id, JSON.stringify(infoCard()));
+            cartPreventDefault();
               break;
   
           case minusBtn:
@@ -79,6 +91,7 @@ const productEvents = () => {
             cartCounter.textContent--;
             showPrice.textContent = +showPrice.textContent - (+staticPrice.textContent);
             localStorage.setItem('id ' + card.id, JSON.stringify(infoCard()));
+            cartPreventDefault();
   
             if (counter.textContent < 1) {
               wClasses('remove');
@@ -87,6 +100,22 @@ const productEvents = () => {
               localStorage.removeItem('id ' + card.id);
             }
               break;
+        }
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (
+            e.target.classList.contains('modal__btn') || 
+            e.target.classList.contains('modal') ||
+            e.target.classList.contains('modal__close')
+          ) {
+          modal.classList.remove('show-modal');
+        }
+      });
+
+      cartBtn.addEventListener('click', () => {
+        if (+cartCounter.textContent < 1) {
+          modal.classList.add('show-modal');
         }
       });
     });
