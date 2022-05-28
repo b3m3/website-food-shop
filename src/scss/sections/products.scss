@@ -1,5 +1,4 @@
 .products {
-  margin: rem(-2) 0 0 0;
   overflow: hidden;
   &__main {
     display: flex;
@@ -10,15 +9,18 @@
     padding: 0 0 rem(50) 0;
     transition: .6s ease-out;
 
-    &::before {
-      position: absolute;
-      content: '';
-      width: 100%;
-      min-height: 1px;
-      top: 0;
-      left: 0;
-      background: radial-gradient(circle, rgba(186, 186, 186, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+    &:not(:last-child) {
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        min-height: 1px;
+        bottom: 0;
+        left: 0;
+        background: radial-gradient(circle, rgba(186, 186, 186, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+      }
     }
+
   }
   &__header {
     padding: rem(50) rem(15);

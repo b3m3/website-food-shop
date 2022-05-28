@@ -1,5 +1,6 @@
 import slider from '../lib/slider.js';
 import productEvents from '../modules/product-events.js';
+import {pruductsMenuTab} from '../modules/tabs.js';
 
 const createPoducts = () => {
 
@@ -65,7 +66,8 @@ const createPoducts = () => {
         }
   
         const wrappsProsucts = document.querySelectorAll('.products__wrapp');
-  
+        const productItems = document.querySelectorAll('.products__item');
+
         wrappsProsucts.forEach((wrapp, index) => {
           productsData[index].forEach(item => {
             productCard(wrapp, {...item});
@@ -73,6 +75,7 @@ const createPoducts = () => {
         });
         
         productEvents();
+        pruductsMenuTab(productItems);
       })
       .catch((err) => console.log(err))
       .finally(() => setTimeout(slider, 230));

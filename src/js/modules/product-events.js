@@ -1,7 +1,7 @@
 const productEvents = () => {
   const cards = document.querySelectorAll('.card');
   const cartCounter = document.querySelector('.cart-header__counter');
-  const cartBtn = document.querySelector('.cart-btn');
+  const cartBtn = document.querySelectorAll('.cart-btn');
   const modal = document.querySelector('.modal');
 
   if (document.querySelector('.products')) {
@@ -55,9 +55,9 @@ const productEvents = () => {
 
       const cartPreventDefault = () => {
         if (+cartCounter.textContent < 1) {
-          cartCounter.parentNode.setAttribute('href', '#');
+          cartBtn.forEach(btn => btn.setAttribute('href', '#'));
         } else {
-          cartCounter.parentNode.setAttribute('href', 'cart.html');
+          cartBtn.forEach(btn => btn.setAttribute('href', 'cart.html'));
         }
       };
 
@@ -113,10 +113,12 @@ const productEvents = () => {
         }
       });
 
-      cartBtn.addEventListener('click', () => {
-        if (+cartCounter.textContent < 1) {
-          modal.classList.add('show-modal');
-        }
+      cartBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (+cartCounter.textContent < 1) {
+            modal.classList.add('show-modal');
+          }
+        });
       });
     });
   }

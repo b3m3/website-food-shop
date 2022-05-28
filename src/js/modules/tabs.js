@@ -52,26 +52,17 @@ const tabs = () => {
   tab('.ordering__time .ordering__btn', '.ordering__time .ordering__hover', 'active');
 };
 
-const pruductsMenuTab = () => {
+const pruductsMenuTab = (contents) => {
 
   if (document.querySelector('.products-menu')) {
     const btns = document.querySelectorAll('.products-menu__item');
     const line = document.querySelector('.products-menu__line');
     const widthLine = [];
     const leftLine = [];
-  
-    let contents;
 
-    setTimeout(() => {
-      contents = document.querySelectorAll('.products__item');
-    }, 200);
-
-    
     btns.forEach((item, i) => {
-      setTimeout(() => {
-        widthLine.push(item.clientWidth);
-        leftLine.push(item.offsetLeft);
-      }, 200);
+      widthLine.push(item.clientWidth);
+      leftLine.push(item.offsetLeft);
   
       item.addEventListener('click', () => {
         btns.forEach(item => item.classList.remove('active'));
