@@ -69,9 +69,9 @@
               <div class="ordering__info info-ordering ordering__block">
                 <h4 class="ordering__title">1. Контактная информация</h4>
                 <div class="info-ordering__row">
-                  <input class="info-ordering__input ordering__input" type="text" name="user-name" placeholder="Имя"
+                  <input class="info-ordering__input ordering__input" type="text" name="user-name" placeholder="Имя *"
                     required>
-                  <input class="info-ordering__input ordering__input" type="tel" name="user-name" placeholder="Телефон"
+                  <input class="info-ordering__input ordering__input" type="tel" name="user-tel" placeholder="Телефон *"
                     required>
                 </div>
               </div>
@@ -104,9 +104,18 @@
                     <p class="delivery-ordering__hover-btn">Выберите ресторан</p>
                     <ul class="delivery-ordering__hover-list">
                       <li class="delivery-ordering__hover-item">Выберите ресторан</li>
-                      <li class="delivery-ordering__hover-item">Ресторан №1</li>
-                      <li class="delivery-ordering__hover-item">Ресторан №2</li>
-                      <li class="delivery-ordering__hover-item">Ресторан №3</li>
+                      <li class="delivery-ordering__hover-item">
+                        <input type="radio" name="restaurant" value="1" id="restaurant1">
+                        <label for="restaurant1">Ресторан №1</label>
+                      </li>
+                      <li class="delivery-ordering__hover-item">
+                        <input type="radio" name="restaurant" value="2" id="restaurant2">
+                        <label for="restaurant2">Ресторан №2</label>
+                      </li>
+                      <li class="delivery-ordering__hover-item">
+                        <input type="radio" name="restaurant" value="3" id="restaurant3">
+                        <label for="restaurant3">Ресторан №3</label>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -144,19 +153,20 @@
                 <div class="time-ordering__quantity">
                   <p class="time-ordering__quantity-text">Кол-во персон</p>
                   <div class="time-ordering__quantity-box">
-                    <button class="time-ordering__quantity-btn ordering-minus" type="button">-</button>
-                    <span class="time-ordering__quantity-counter ordering-counter">1</span>
+                    <button class="time-ordering__quantity-btn ordering-minus ban" type="button">-</button>
+                    <input class="time-ordering__quantity-counter ordering-counter" name="person" value="1" readonly>
                     <button class="time-ordering__quantity-btn ordering-plus" type="button">+</button>
                   </div>
                 </div>
                 <h5 class="ordering__subtitle">Хотите мы позвоним?</h5>
                 <div class="time-ordering__radio">
-                  <input class="time-ordering__radio-input" type="radio" id="not-call-back" name="radio" checked>
+                  <input class="time-ordering__radio-input" type="radio" id="not-call-back" name="call-back"
+                    value="no-call" checked>
                   <label class="time-ordering__radio-label" for="not-call-back">Не перезванивать</label>
                   <span class="time-ordering__radio-custom"></span>
                 </div>
                 <div class="time-ordering__radio">
-                  <input class="time-ordering__radio-input" type="radio" id="call-back" name="radio">
+                  <input class="time-ordering__radio-input" type="radio" id="call-back" name="call-back" value="call">
                   <label class="time-ordering__radio-label" for="call-back">Потребуется звонок оператора</label>
                   <div class="time-ordering__radio-custom"></div>
                 </div>
@@ -173,6 +183,25 @@
                 <button class="confirm-ordering__btn btn" type="submit">Оформить заказ</button>
               </div>
             </form>
+
+            <div class="ordering__loading loading-ordering">
+              <div class="loading-ordering__spinner">
+                <div class="loading-ordering__ldio">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal">
+  <div class="modal__wrapp">
+    <a class="modal__close" href="index.html">&times;</a>
+    <span class="modal__icon icon-cart"></span>
+    <h3 class="modal__title">КОРЗИНА ПУСТАЯ</h3>
+    <a class="modal__btn btn" href="index.html">Посмотреть меню</a>
+  </div>
+</div>
           </div>
         </div>
       </section>
