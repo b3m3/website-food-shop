@@ -1,7 +1,9 @@
 const tabs = () => {
 
-  if (document.querySelector('.ordering')) {
-    const tab = (buttons, contents, activeClass) => {
+  const tab = (buttons, contents, activeClass) => {
+
+    if (document.querySelector('.ordering')) {
+
       const btns = document.querySelectorAll(buttons);
       const tabContents = document.querySelectorAll(contents);
   
@@ -42,13 +44,48 @@ const tabs = () => {
           showLabel();
         });
       });
-    };
-  
+    }
+  };
     
-    tab('.ordering__delivery .ordering__btn', '.ordering__delivery .ordering__hover', 'active');
-    tab('.ordering__pay .ordering__btn', '.ordering__pay .ordering__hover', 'active');
-    tab('.ordering__time .ordering__btn', '.ordering__time .ordering__hover', 'active');
+  tab('.ordering__delivery .ordering__btn', '.ordering__delivery .ordering__hover', 'active');
+  tab('.ordering__pay .ordering__btn', '.ordering__pay .ordering__hover', 'active');
+  tab('.ordering__time .ordering__btn', '.ordering__time .ordering__hover', 'active');
+};
+
+const pruductsMenuTab = () => {
+
+  if (document.querySelector('.products-menu')) {
+    const btns = document.querySelectorAll('.products-menu__item');
+    const line = document.querySelector('.products-menu__line');
+    const widthLine = [];
+    const leftLine = [];
+  
+    let contents;
+
+    setTimeout(() => {
+      contents = document.querySelectorAll('.products__item');
+    }, 200);
+
+    
+    btns.forEach((item, i) => {
+      setTimeout(() => {
+        widthLine.push(item.clientWidth);
+        leftLine.push(item.offsetLeft);
+      }, 200);
+  
+      item.addEventListener('click', () => {
+        btns.forEach(item => item.classList.remove('active'));
+        contents.forEach(content => content.style.transform = `translateY(0)`);
+
+        contents[i].style.transform = `translateY(-${i}00%)`;
+        contents[0].style.transform = `translateY(${i}00%)`;
+        item.classList.add('active');
+  
+        line.style.width = `${widthLine[i]}px`;
+        line.style.left = `${leftLine[i]}px`;
+      });
+    });
   }
 };
 
-export default tabs;
+export {tabs, pruductsMenuTab};

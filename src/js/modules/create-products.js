@@ -12,7 +12,7 @@ const createPoducts = () => {
   
     const block = (wrapp, title) => {
       const item = document.createElement('div');
-      item.classList.add('products__item', 'cold-snacks');
+      item.classList.add('products__item');
       item.innerHTML = `
         <div class="products__header header-products container">
           <h2 class="header-products__title title">${title}</h2>
@@ -75,7 +75,7 @@ const createPoducts = () => {
         productEvents();
       })
       .catch((err) => console.log(err))
-      .finally(() => setTimeout(slider, 300));
+      .finally(() => setTimeout(slider, 230));
   }
 };
 

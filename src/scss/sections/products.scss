@@ -1,8 +1,14 @@
 .products {
+  margin: rem(-2) 0 0 0;
   overflow: hidden;
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
   &__item {
     position: relative;
     padding: 0 0 rem(50) 0;
+    transition: .6s ease-out;
 
     &::before {
       position: absolute;

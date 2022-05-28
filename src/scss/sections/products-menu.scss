@@ -1,31 +1,41 @@
 .products-menu {
+  &__wrapp {
+    position: relative;
+  }
   &__main {
     display: flex;
     align-items: center;
     padding: rem(28) 0;
+    overflow: auto;
   }
   &__list {
     display: flex;
     gap: rem(40);
-    display: none;
+    padding: 0 rem(10);
   }
   &__item {
     cursor: pointer;
     position: relative;
     white-space: nowrap;
     font-size: rem(18);
+    transition: .3s ease;
 
-    &::before {
-      position: absolute;
-      content: '';
-      width: 0;
-      height: 3px;
-      left: 0;
-      bottom: rem(-30);
-      background: #618967;
-      box-shadow: 0px 5px 12px rgba(114, 164, 121, 1);
-      transition: .3s ease;
+    &.active {
+      color: #fff;
     }
-    &.active {&::before {width: 100%;}}
+  }
+  &__line {
+    position: absolute;
+    width: rem(160);
+    height: 3px;
+    left: rem(10);
+    bottom: 0;
+    background: #618967;
+    box-shadow: 0px 5px 12px rgba(114, 164, 121, 1);
+    transition: .3s ease;
+
+    @include mq(rem(550)) {
+      display: none;
+    }
   }
 }

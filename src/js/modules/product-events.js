@@ -64,8 +64,8 @@ const productEvents = () => {
       addInfoFromLStorage(card, counter, showPrice, wClasses);
       
       cartCounter.textContent = hoverElem.classList.contains('added') ? 
-      +cartCounter.textContent + (+counter.textContent) :
-      cartCounter.textContent;
+        +cartCounter.textContent + (+counter.textContent) :
+        cartCounter.textContent;
       
       cartPreventDefault();
       
