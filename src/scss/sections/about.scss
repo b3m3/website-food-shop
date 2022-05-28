@@ -1,4 +1,9 @@
 .about {
+  &__container {
+    max-width: rem(1395);
+    margin: 0 auto;
+    padding: 0 rem(15);
+  }
   &__main {
     position: relative;
     overflow: hidden;

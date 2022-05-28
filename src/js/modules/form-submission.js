@@ -67,7 +67,7 @@ const formSubmission = () => {
       loading.classList.add('show-load');
       document.body.style.overflow = 'hidden';
 
-      const modalStatus = (emodzi, title) => {
+      const modalStatus = (emoji, title) => {
         const modal = document.querySelector('.modal');
         const modalTitle = modal.querySelector('.modal__title');
         const modalIcon = modal.querySelector('.modal__icon');
@@ -75,7 +75,7 @@ const formSubmission = () => {
         loading.classList.remove('show-load');
         modal.classList.add('show-modal');
         modalIcon.classList.remove('icon-cart');
-        modalIcon.innerHTML = emodzi;
+        modalIcon.innerHTML = emoji;
         modalTitle.textContent = title;
       };
 

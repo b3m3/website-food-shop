@@ -26,16 +26,17 @@
   }
   &__line {
     position: absolute;
-    width: rem(160);
+    width: 160px;
     height: 3px;
-    left: rem(10);
+    left: 10px;
     bottom: 0;
     background: #618967;
     box-shadow: 0px 5px 12px rgba(114, 164, 121, 1);
     transition: .3s ease;
 
     @include mq(rem(550)) {
-      display: none;
+      max-width: 0;
+      opacity: 0;
     }
   }
 }

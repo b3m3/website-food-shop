@@ -522,12 +522,6 @@ body {
   padding: 0 0.9375rem;
 }
 
-.container-big {
-  max-width: 87.1875rem;
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-}
-
 /* general */
 @keyframes tab-hover {
   from {
@@ -1139,9 +1133,9 @@ body {
 }
 .products-menu__line {
   position: absolute;
-  width: 10rem;
+  width: 160px;
   height: 3px;
-  left: 0.625rem;
+  left: 10px;
   bottom: 0;
   background: #618967;
   box-shadow: 0px 5px 12px rgb(114, 164, 121);
@@ -1149,7 +1143,8 @@ body {
 }
 @media (max-width: 34.375rem) {
   .products-menu__line {
-    display: none;
+    max-width: 0;
+    opacity: 0;
   }
 }
 
@@ -1184,6 +1179,11 @@ body {
 }
 
 /* about */
+.about__container {
+  max-width: 87.1875rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
 .about__main {
   position: relative;
   overflow: hidden;
@@ -1371,7 +1371,7 @@ body {
   min-height: 665px;
   bottom: 0;
   left: 0;
-  opacity: 0.45;
+  opacity: 0.65;
   filter: grayscale(100%) invert(92%) contrast(83%);
 }
 @media (max-width: 1320px) {

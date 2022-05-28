@@ -1,7 +1,7 @@
 const productEvents = () => {
   const cards = document.querySelectorAll('.card');
   const cartCounter = document.querySelector('.cart-header__counter');
-  const cartBtn = document.querySelector('.cart-header');
+  const cartBtn = document.querySelector('.cart-btn');
   const modal = document.querySelector('.modal');
 
   if (document.querySelector('.products')) {
