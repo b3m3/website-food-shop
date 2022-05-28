@@ -140,7 +140,8 @@ const cartEvents = () => {
             total.textContent = total.textContent - price.textContent;
             difference.textContent = sumToFreeShipping - total.textContent;
             localStorage.removeItem(`id ${card.id}`);
-            card.remove();
+            card.classList.add('remove');
+            setTimeout(() => card.remove(), 400);
             freeStatus();
             correctEnding();
 
