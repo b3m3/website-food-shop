@@ -150,14 +150,6 @@ h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy-Light.ttf") format("ttf");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Gilroy";
-  font-display: swap;
   src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"), url("../fonts/Gilroy-ExtraBold.woff") format("woff"), url("../fonts/Gilroy-ExtraBold.ttf") format("ttf");
   font-weight: 800;
   font-style: normal;
@@ -166,8 +158,8 @@ h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
-  font-weight: 500;
+  src: url("../fonts/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy-Light.woff") format("woff"), url("../fonts/Gilroy-Light.ttf") format("ttf");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -176,6 +168,14 @@ h6 {
   font-display: swap;
   src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-display: swap;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -613,7 +613,7 @@ body {
 @-webkit-keyframes overview-product {
   from {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.65);
   }
 
   to {
@@ -625,7 +625,7 @@ body {
 @keyframes overview-product {
   from {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.65);
   }
 
   to {
@@ -655,6 +655,30 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes show-hover-elem {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes show-hover-elem {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -771,7 +795,7 @@ body {
 .card__counter {
   position: absolute;
   z-index: 2;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   content: "";
@@ -785,10 +809,14 @@ body {
   font-size: 1.25rem;
   line-height: 1.5rem;
   color: #FFFFFF;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.4s ease;
 }
 
 .card__counter.added {
-  display: flex;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .card__image {
@@ -886,6 +914,8 @@ body {
 
 .card__body-hover.added {
   display: flex;
+  -webkit-animation: show-hover-elem 0.4s ease-out;
+          animation: show-hover-elem 0.4s ease-out;
 }
 
 .modal {
