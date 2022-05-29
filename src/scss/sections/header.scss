@@ -17,6 +17,7 @@
   }
   &__logo {
     padding: 0 0 0 rem(18);
+    @include laptop {padding: 0;}
     @include tablet {text-align: center;}
   }
   &__search {
@@ -37,9 +38,11 @@
     @include tablet {display: none;}
   }
   &__cart {
+    margin: 0 rem(18) 0 0;
     border-radius: rem(10);
     gap: rem(32);
     padding: rem(14) rem(13) rem(14) rem(24);
+    @include laptop {margin: 0;}
     @include tablet {
       gap: rem(4);
       padding: rem(5) rem(8) rem(8) rem(8);

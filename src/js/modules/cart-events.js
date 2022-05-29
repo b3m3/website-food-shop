@@ -3,21 +3,21 @@ const cartEvents = () => {
   const quantityLabel = document.querySelector('.header-cart__label span');
   const total = document.querySelector('.bottom-cart__total-prise span');
   const difference = document.querySelector('.bottom-cart__diff-cash span');
-  
+
   const sumToFreeShipping = 50;
 
   if (document.querySelector('.cart')) {
     
-    for (const key in localStorage) {
-      if (typeof(localStorage[key]) === 'string') {
-        const data = JSON.parse(localStorage[key]);
-  
-        const createCartCard = () => {
+    const createCardsInCart = () => {
+      for (const key in localStorage) {
+        if (typeof(localStorage[key]) === 'string') {
+          const data = JSON.parse(localStorage[key]);
+    
           const wrapp = document.querySelector('.cart__items');
           const card = document.createElement('div');
           card.id = data.id;
           card.classList.add('item-cart');
-  
+
           card.innerHTML = `
             <div class="item-cart__img ibga">
               <img src="img/products/${data.img}" alt="image">
@@ -34,13 +34,13 @@ const cartEvents = () => {
             <p class="item-cart__price" data-price="${data.staticPrice}"><span>${data.showPrice}</span> $</p>
             <button class="item-cart__btn close-btn">&#215;</button>
           `;
-  
+
           wrapp.append(card);
-        };
-  
-        createCartCard();
+        }
       }
-    }
+    };
+
+    createCardsInCart();
 
     const cards = document.querySelectorAll('.item-cart');
 

@@ -33,29 +33,9 @@
 
 .header-overview {
   &__back {
-    display: flex;
-    align-items: center;
-    gap: rem(10);
     background-color: transparent;
     color: $mc;
     transition: .4s ease;
-
-    & span {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: rem(26);
-      height: rem(26);
-      border-radius: 50%;
-      background-color: $green;
-
-      &::before {
-        position: absolute;
-        content: '';
-        @include arrow(left, #fff, 2px, 3px);
-      }
-    }
 
     &:hover {
       color: #fff;

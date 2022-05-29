@@ -78,7 +78,7 @@ const createPoducts = () => {
         pruductsMenuTab(productItems);
       })
       .catch((err) => console.log(err))
-      .finally(() => setTimeout(slider, 230));
+      .finally(() => setTimeout(slider, 300));
   }
 };
 

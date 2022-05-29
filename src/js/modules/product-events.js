@@ -10,7 +10,7 @@ const productEvents = () => {
 
   if (document.querySelector('.products')) {
 
-    const addInfoFromLStorage = (item, counter, price, showHoverElems) => {
+    const getInfoFromLStorage = (item, counter, price, showHoverElems) => {
       for (const key in localStorage) {
         if (typeof(localStorage[key]) === 'string') {
           const data = JSON.parse(localStorage[key]);
@@ -80,13 +80,16 @@ const productEvents = () => {
         price.textContent = Price;
       };
 
-      addInfoFromLStorage(card, counter, showPrice, wClasses);
-      
-      cartCounter.textContent = hoverElem.classList.contains('added') ? 
-        +cartCounter.textContent + (+counter.textContent) :
-        cartCounter.textContent;
-      
+      const quantityProductsInCart = () => {
+        cartCounter.textContent = 
+          hoverElem.classList.contains('added') ? 
+          +cartCounter.textContent + (+counter.textContent) :
+          cartCounter.textContent;
+      };
+
+      getInfoFromLStorage(card, counter, showPrice, wClasses);
       cartPreventDefault();
+      quantityProductsInCart();
       
       card.addEventListener('click', (e) => {
         switch (e.target) {

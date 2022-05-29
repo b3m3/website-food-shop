@@ -6,12 +6,16 @@ const formSubmission = () => {
     const checkboxConfirm = document.querySelector('.confirm-ordering__checkbox-input');
     const cartCounter = document.querySelector('.cart-header__counter');
 
-    for (const key in localStorage) {
-      if (typeof(localStorage[key]) === 'string') {
-        const data = JSON.parse(localStorage[key]);
-        cartCounter.textContent = +cartCounter.textContent + (+data.counter);
+    const quantityProductsInCart = () => {
+      for (const key in localStorage) {
+        if (typeof(localStorage[key]) === 'string') {
+          const data = JSON.parse(localStorage[key]);
+          cartCounter.textContent = +cartCounter.textContent + (+data.counter);
+        }
       }
-    }
+    };
+
+    quantityProductsInCart();
 
     const sendingData = async (url, data) => {
       const response = await fetch(url, {

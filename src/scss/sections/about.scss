@@ -129,8 +129,8 @@
     &::before {transition: .3s ease;}
   }
   &__text {
-    font-size: rem(18);
-    line-height: rem(25);
+    @include fit('font-size', 18, 15, 1);
+    @include fit('line-height', 25, 18, 1);
     color: #fff;
     transition: .3s ease;
   }

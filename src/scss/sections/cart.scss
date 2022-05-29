@@ -95,6 +95,8 @@
     height: 100%;
     max-width: rem(117);
     min-width: rem(110);
+    border-radius: rem(10);
+    overflow: hidden;
 
     @include tablet {
       grid-row: 1 / 3; 
@@ -194,6 +196,7 @@
   &__diff {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: rem(7);
 
     @include tablet {justify-content: center;}

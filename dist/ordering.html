@@ -15,43 +15,43 @@
   <div class="app" id="app">
     <!-- header -->
     <header class="header">
-  <div class="header__wrapp">
-    <div class="container">
-      <div class="header__main">
+      <div class="header__wrapp">
+        <div class="container">
+          <div class="header__main">
 
-        <div class="header__burger">
-          <div class="burger"><i></i><i></i><i></i></div>
-          <p>Меню</p>
-          <span class="close">&#10006;</span>
-        </div>
+            <div class="header__burger">
+              <div class="burger"><i></i><i></i><i></i></div>
+              <p>Меню</p>
+              <span class="close">&#10006;</span>
+            </div>
 
-        <div class="header__logo logo">
-          <a href="index.html">LOGOS</a>
-        </div>
+            <div class="header__logo logo">
+              <a href="index.html">LOGOS</a>
+            </div>
 
-        <div class="header__search search-header">
-          <span class="search-header__icon icon-location"></span>
-          <input class="search-header__input" type="text" placeholder="Введите адрес доставки">
-          <button class="search-header__button"><span class="icon-search"></span></button>
-        </div>
+            <div class="header__search search-header">
+              <span class="search-header__icon icon-location"></span>
+              <input class="search-header__input" type="text" placeholder="Введите адрес доставки">
+              <button class="search-header__button"><span class="icon-search"></span></button>
+            </div>
 
-        <div class="header__contacts contacts-header">
-          <span class="contacts-header__icon icon-calling"></span>
-          <div class="contacts-header__col">
-            <p class="contacts-header__text">Контакты:</p>
-            <a class="contacts-header__tel" href="tel:99990001122">+9 (999) 000-11-22</a>
+            <div class="header__contacts contacts-header">
+              <span class="contacts-header__icon icon-calling"></span>
+              <div class="contacts-header__col">
+                <p class="contacts-header__text">Контакты:</p>
+                <a class="contacts-header__tel" href="tel:99990001122">+9 (999) 000-11-22</a>
+              </div>
+            </div>
+
+            <a href="cart.html" class="header__cart cart-header cart-btn btn">
+              <span class="cart-header__text">Корзина</span>
+              <span class="cart-header__icon icon-buy"></span>
+              <span class="cart-header__counter">0</span>
+            </a>
           </div>
         </div>
-
-        <a href="cart.html" class="header__cart cart-header cart-btn btn">
-          <span class="cart-header__text">Корзина</span>
-          <span class="cart-header__icon icon-buy"></span>
-          <span class="cart-header__counter">0</span>
-        </a>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
     <!-- main -->
     <main class="main">
@@ -60,9 +60,8 @@
         <div class="ordering__container">
           <div class="ordering__main">
             <div class="ordering__header header-ordering">
-              <a class="header-ordering__back" href="cart.html">
-                < в корзину</a>
-                  <h2 class="header-ordering__title title">Оформление заказа</h2>
+              <a class="header-ordering__back back-link" href="cart.html"><span></span> в корзину</a>
+              <h2 class="header-ordering__title title">Оформление заказа</h2>
             </div>
 
             <form action="#" class="ordering__form">
@@ -195,13 +194,13 @@
             </div>
 
             <div class="modal">
-  <div class="modal__wrapp">
-    <a class="modal__close" href="index.html">&times;</a>
-    <span class="modal__icon icon-cart"></span>
-    <h3 class="modal__title">КОРЗИНА ПУСТАЯ</h3>
-    <a class="modal__btn btn" href="index.html">Посмотреть меню</a>
-  </div>
-</div>
+              <div class="modal__wrapp">
+                <a class="modal__close" href="index.html">&times;</a>
+                <span class="modal__icon icon-cart"></span>
+                <h3 class="modal__title">КОРЗИНА ПУСТАЯ</h3>
+                <a class="modal__btn btn" href="index.html">Посмотреть меню</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -209,32 +208,32 @@
 
     <!-- footer -->
     <footer class="footer" id="footer">
-  <div class="container">
-    <div class="footer__main">
-      <div class="footer__info info-footer">
-        <div class="info-footer__logo logo">
-          <a href="#">LOGOS</a>
+      <div class="container">
+        <div class="footer__main">
+          <div class="footer__info info-footer">
+            <div class="info-footer__logo logo">
+              <a href="#">LOGOS</a>
+            </div>
+            <p class="info-footer__copyright">© ООО СК «АПШЕРОН»<br>
+              Все права защищены. 2010-2020</p>
+            <ul class="info-footer__list">
+              <li><a class="info-footer__link" href="#">Пользовательское соглашение</a></li>
+              <li><a class="info-footer__link" href="#">Карта сайта</a></li>
+              <li><a class="info-footer__link" href="#">Политика конфиденциальности</a></li>
+            </ul>
+          </div>
+          <nav class="footer__menu menu">
+            <ul class="menu__list">
+              <li><a class="menu__link" href="#">О ресторане</a></li>
+              <li><a class="menu__link" href="#">Условия доставки</a></li>
+              <li><a class="menu__link" href="#">Возврат товара</a></li>
+              <li><a class="menu__link" href="#">Акции</a></li>
+            </ul>
+          </nav>
+          <a class="footer__up" href="#"><span></span></a>
         </div>
-        <p class="info-footer__copyright">© ООО СК «АПШЕРОН»<br>
-          Все права защищены. 2010-2020</p>
-        <ul class="info-footer__list">
-          <li><a class="info-footer__link" href="#">Пользовательское соглашение</a></li>
-          <li><a class="info-footer__link" href="#">Карта сайта</a></li>
-          <li><a class="info-footer__link" href="#">Политика конфиденциальности</a></li>
-        </ul>
       </div>
-      <nav class="footer__menu menu">
-        <ul class="menu__list">
-          <li><a class="menu__link" href="#">О ресторане</a></li>
-          <li><a class="menu__link" href="#">Условия доставки</a></li>
-          <li><a class="menu__link" href="#">Возврат товара</a></li>
-          <li><a class="menu__link" href="#">Акции</a></li>
-        </ul>
-      </nav>
-      <a class="footer__up" href="#"><span></span></a>
-    </div>
-  </div>
-</footer>
+    </footer>
   </div>
 
   <script src="js/app.min.js"></script>

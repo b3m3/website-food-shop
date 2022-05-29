@@ -109,6 +109,28 @@
   }
 }
 
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  & span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(26);
+    height: rem(26);
+    border-radius: 50%;
+    background-color: $green;
+
+    &::before {
+      position: absolute;
+      content: '';
+      @include arrow(left, #fff, 2px, 3px);
+    }
+  }
+}
+
 .card {
   cursor: pointer;
   user-select: none;
@@ -169,8 +191,8 @@
   }
   &__body-title {
     font-weight: 700;
-    font-size: rem(22);
-    line-height: rem(27);
+    @include fit('font-size', 22, 18, 1);
+    @include fit('line-height', 27, 20, 1);
     color: #fff;
   }
   &__body-weight {
