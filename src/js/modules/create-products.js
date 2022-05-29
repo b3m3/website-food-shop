@@ -76,9 +76,9 @@ const createPoducts = () => {
         
         productEvents();
         pruductsMenuTab(productItems);
+        slider();
       })
-      .catch((err) => console.log(err))
-      .finally(() => setTimeout(slider, 300));
+      .catch((err) => console.log(err));
   }
 };
 

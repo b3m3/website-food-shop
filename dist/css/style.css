@@ -785,6 +785,7 @@ body {
   max-width: 20.5625rem;
   max-height: 24.0625rem;
   transition: 0.3s ease;
+  margin: 0 0.4375rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: minmax(14.1875rem, 1fr) minmax(9.875rem, 1fr);

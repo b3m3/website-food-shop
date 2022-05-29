@@ -149,7 +149,7 @@
   max-width: rem(329);
   max-height: rem(385);
   transition: .3s ease;
-
+  margin: 0 rem(7);
   display: grid;
   grid-template: minmax(rem(227), 1fr) minmax(rem(158), 1fr) / 1fr;
 
