@@ -1,8 +1,12 @@
 const productEvents = () => {
+  const productsSection = document.querySelector('.products');
+  const overviewSection = document.querySelector('.overview');
+  const productsMenuSection = document.querySelector('.products-menu');
   const cards = document.querySelectorAll('.card');
   const cartCounter = document.querySelector('.cart-header__counter');
   const cartBtn = document.querySelectorAll('.cart-btn');
   const modal = document.querySelector('.modal');
+  const overviewBackBtn = document.querySelector('.header-overview__back'); 
 
   if (document.querySelector('.products')) {
 
@@ -25,6 +29,7 @@ const productEvents = () => {
       const counter = card.querySelector('.card__counter');
       const subtitle = card.querySelector('.card__body-title');
       const desc = card.querySelector('.card__body-text');
+      const weight = card.querySelector('.card__body-weight span');
 
       const addBtn = card.querySelector('.card__body-btn');
       const plusBtn = card.querySelector('.card__body-plus');
@@ -59,6 +64,20 @@ const productEvents = () => {
         } else {
           cartBtn.forEach(btn => btn.setAttribute('href', 'cart.html'));
         }
+      };
+
+      const addInfoToOverviewSection = (Img, Title, Desc, Weight, Price) => {
+        const image = overviewSection.querySelector('.body-overview__image img');
+        const title = overviewSection.querySelector('.body-overview__info-title');
+        const desc = overviewSection.querySelector('.body-overview__info-text');
+        const weights = overviewSection.querySelectorAll('.overview .weight');
+        const price = overviewSection.querySelector('.body-overview__info-price span');
+
+        image.src = Img;
+        title.textContent = Title;
+        desc.textContent = Desc;
+        weights.forEach(weight => weight.textContent = Weight);
+        price.textContent = Price;
       };
 
       addInfoFromLStorage(card, counter, showPrice, wClasses);
@@ -100,6 +119,18 @@ const productEvents = () => {
               localStorage.removeItem('id ' + card.id);
             }
               break;
+
+          case img:
+            addInfoToOverviewSection(
+              img.src, subtitle.textContent, desc.textContent, weight.textContent, staticPrice.textContent
+            );
+            overviewSection.classList.add('show');
+            productsSection.style.display = 'none';
+            productsMenuSection.style.pointerEvents = 'none';
+            productsMenuSection.style.opacity = '.4';
+
+            productsMenuSection.scrollIntoView();
+              break;
         }
       });
 
@@ -119,6 +150,13 @@ const productEvents = () => {
             modal.classList.add('show-modal');
           }
         });
+      });
+
+      overviewBackBtn.addEventListener('click', () => {
+        overviewSection.classList.remove('show');
+        productsSection.style.display = 'block';
+        productsMenuSection.style.pointerEvents = 'all';
+        productsMenuSection.style.opacity = '1';
       });
     });
   }

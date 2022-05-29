@@ -1,5 +1,6 @@
 .products-menu {
   position: relative;
+  transition: .8s ease;
 
   &::before {
     position: absolute;

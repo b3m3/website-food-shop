@@ -188,15 +188,15 @@ h1, h2, h3, h4, h5, h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
-  font-weight: 400;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
-  font-weight: 500;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -552,6 +552,26 @@ body {
     transform: translateX(-6.25rem);
   }
 }
+@keyframes overview-product {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes show-products {
+  from {
+    opacity: 0;
+    transform: translateX(-1.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 .ibg {
   width: 100%;
   height: 100%;
@@ -678,6 +698,14 @@ body {
   border-radius: 0.625rem 0.625rem 0 0;
   overflow: hidden;
 }
+.card__image img {
+  transition: 0.3s ease-out;
+}
+@media (any-hover: hover) {
+  .card__image:hover img {
+    transform: scale(1.05);
+  }
+}
 .card__body {
   overflow: hidden;
   border-radius: 0 0 0.625rem 0.625rem;
@@ -697,7 +725,7 @@ body {
   line-height: 1.6875rem;
   color: #fff;
 }
-.card__body-wages {
+.card__body-weight {
   font-size: 0.75rem;
   line-height: 0.875rem;
   color: #FFFFFF;
@@ -1109,6 +1137,7 @@ body {
 /* products-menu */
 .products-menu {
   position: relative;
+  transition: 0.8s ease;
 }
 .products-menu::before {
   position: absolute;
@@ -1164,6 +1193,10 @@ body {
 .overview {
   display: none;
 }
+.overview.show {
+  animation: overview-product 0.8s ease-out;
+  display: block;
+}
 .overview__container {
   max-width: 77.5rem;
   margin: 0 auto;
@@ -1178,7 +1211,7 @@ body {
 .overview__body {
   overflow: hidden;
   display: grid;
-  grid-template: minmax(25rem, auto)/auto auto;
+  grid-template: minmax(25rem, auto)/auto 1fr;
   background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
   border-radius: 0.625rem;
 }
@@ -1357,6 +1390,7 @@ body {
 /* products */
 .products {
   overflow: hidden;
+  animation: show-products 1s ease-out;
 }
 .products__main {
   display: flex;
@@ -1842,6 +1876,8 @@ body {
 @media (max-width: 767px) {
   .item-cart__img {
     grid-row: 1/3;
+    max-width: none;
+    width: 100%;
   }
 }
 @media (max-width: 374px) {

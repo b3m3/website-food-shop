@@ -1,5 +1,7 @@
 .products {
   overflow: hidden;
+  animation: show-products 1s ease-out;
+
   &__main {
     display: flex;
     flex-direction: column;

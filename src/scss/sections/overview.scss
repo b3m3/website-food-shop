@@ -1,5 +1,10 @@
 .overview {
   display: none;
+
+  &.show {
+    animation: overview-product .8s ease-out;
+    display: block;
+  }
   &__container {
     max-width: rem(1240);
     margin: 0 auto;
@@ -14,7 +19,7 @@
   &__body {
     overflow: hidden;
     display: grid;
-    grid-template: minmax(rem(400), auto) / auto auto;
+    grid-template: minmax(rem(400), auto) / auto 1fr;
 
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
     border-radius: rem(10);

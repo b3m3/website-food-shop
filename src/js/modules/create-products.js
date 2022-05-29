@@ -38,7 +38,7 @@ const createPoducts = () => {
         <div class="card__body">
           <div class="card__body-top">
             <h5 class="card__body-title">${subtitle}</h5>
-            <p class="card__body-wages">Вес: <span>${weight}</span>г</p>
+            <p class="card__body-weight">Вес: <span>${weight}</span>г</p>
           </div>
           <p class="card__body-text">${desc}</p>
           <div class="card__body-bottom">

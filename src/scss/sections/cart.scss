@@ -96,7 +96,11 @@
     max-width: rem(117);
     min-width: rem(110);
 
-    @include tablet {grid-row: 1 / 3;}
+    @include tablet {
+      grid-row: 1 / 3; 
+      max-width: none; 
+      width: 100%;
+    }
     @include mobile-m {min-width: rem(90);}
   }
   &__info {

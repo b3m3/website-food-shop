@@ -26,6 +26,28 @@
   }
 }
 
+@keyframes overview-product {
+  from {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes show-products {
+  from {
+    opacity: 0;
+    transform: translateX(rem(-30));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .ibg {
   width: 100%;
   height: 100%;
@@ -127,6 +149,9 @@
   &__image {
     border-radius: rem(10) rem(10) 0 0;
     overflow: hidden;
+
+    & img {transition: .3s ease-out;}
+    @include pc {&:hover {& img {transform: scale(1.05);}}}
   }
   &__body {
     overflow: hidden;
@@ -148,7 +173,7 @@
     line-height: rem(27);
     color: #fff;
   }
-  &__body-wages {
+  &__body-weight {
     font-size: rem(12);
     line-height: rem(14);
     color: #FFFFFF;
