@@ -335,7 +335,7 @@
   }
   &__title {
     font-weight: 700;
-    font-size: rem(30);
+    @include fit('font-size', 30, 20, 1);
     line-height: rem(36);
     padding: rem(14) 0 rem(43) 0;
     color: #fff;

@@ -166,16 +166,16 @@ h6 {
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
-  font-weight: 400;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"), url("../fonts/Gilroy-Medium.ttf") format("ttf");
-  font-weight: 500;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"), url("../fonts/Gilroy-Regular.ttf") format("ttf");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -980,7 +980,7 @@ body {
 
 .modal__title {
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: 30px;
   line-height: 2.25rem;
   padding: 0.875rem 0 2.6875rem 0;
   color: #fff;
@@ -2740,6 +2740,10 @@ body {
 
   .card__body-title {
     line-height: calc(20px + 7 * ((100vw - 320px) / 1000));
+  }
+
+  .modal__title {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 1000));
   }
 
   .header__main {
