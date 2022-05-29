@@ -3,6 +3,7 @@ const cartEvents = () => {
   const quantityLabel = document.querySelector('.header-cart__label span');
   const total = document.querySelector('.bottom-cart__total-prise span');
   const difference = document.querySelector('.bottom-cart__diff-cash span');
+  
   const sumToFreeShipping = 50;
 
   if (document.querySelector('.cart')) {
